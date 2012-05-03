@@ -1,4 +1,6 @@
 TrippingOctoBear::Application.routes.draw do
+  resources :events
+
   devise_for :users
 
   # The priority is based upon order of creation:

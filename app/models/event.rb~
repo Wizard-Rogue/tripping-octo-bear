@@ -1,0 +1,3 @@
+class Event < ActiveRecord::Base
+  attr_accessible :address, :city, :country, :description, :latitude, :longitude, :name, :organization_id, :state
+end

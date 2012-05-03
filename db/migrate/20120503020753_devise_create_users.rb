@@ -20,7 +20,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :state
       t.string :city
       t.string :country
-      t.text :description
 
       ## Trackable
       t.integer  :sign_in_count, :default => 0
