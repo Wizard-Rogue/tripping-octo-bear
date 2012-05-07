@@ -12,7 +12,7 @@
       <div class="container">
         <a class="brand" href="#"> Volunteer App</a>
       <ul class="nav">
-        <li class="dropdown"> <!--move user button to right side... pull-right is currently not working -->
+        <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle='dropdown'>
             User
             <b class='caret'></b>

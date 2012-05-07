@@ -32,7 +32,7 @@
   <strong><%= model_class.human_attribute_name(:country) %>:</strong><br>
   <%= @event.country %>
 </p>
-<!--<p>
+<p>
   <strong><%= model_class.human_attribute_name(:latitude) %>:</strong><br>
   <%= @event.latitude %>
 </p>
@@ -40,7 +40,7 @@
   <strong><%= model_class.human_attribute_name(:longitude) %>:</strong><br>
   <%= @event.longitude %>
 </p>
-<p>-->
+<p>
   <strong><%= model_class.human_attribute_name(:supporters) %>:</strong><br>
   <%= @event.supporters %>
 </p>
