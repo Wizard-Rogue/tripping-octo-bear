@@ -7,7 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<div id="container">
+			<p>
+			<% if current_user %>
+				<%= image_tag(current_user.image, :border=>0) %> Welcome <%= current_user.name %>!
+				<%= link_to "Sign Out", signout_path %>
+			<% else %>
+				<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+			<% end %>
+		</p>
+	</div>
 <%= yield %>
 
 </body>
