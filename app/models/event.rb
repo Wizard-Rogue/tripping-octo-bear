@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
              :longitude, :name, :organization_id, :state
 
   has_attached_file :photo
+
+  
 end

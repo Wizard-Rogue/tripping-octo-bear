@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
   <header class="navbar navbar-fixed">
     <div class="navbar-inner">
       <div class="container">
@@ -39,7 +40,9 @@
     <ul class="breadcrumb">
       <%= yield :breadcrumb %>
     </ul>
-<%= yield %>
-
+    <%= yield %>
+  </div>
+<%= javascript_include_tag "application" %>
+</div>
 </body>
 </html>
