@@ -7,7 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<div id="container">
+			<p>
+			<% if current_user %>
+				Welcome <%= current_user.uid %>!
+				<%= link_to "Sign Out", signout_path %><br/>
+				<%= current_user.provider %><br/>
+				<%= current_user.fname %><br/>
+				<%= current_user.lname %><br/>
+				<%= image_tag(current_user.image, :border=>0) %><br/>
+				<%= current_user.email %>
+			<% else %>
+				<%= link_to "Sign in with Facebook!", "/auth/facebook" %>
+			<% end %>
+		</p>
+	</div>
 <%= yield %>
 
 </body>
