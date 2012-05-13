@@ -1,3 +1,9 @@
+
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Events" %> <span class="divider">/</span></li>
+  <liclass="active">Some Event</li>
+<% end %>
+
 <%- model_class = @event.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
@@ -10,7 +16,7 @@
   <%= @event.name %>
 </p>
 
-<%= image_tage @event.photo %>
+<%= image_tag @event.photo %>
 
 <p>
   <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>

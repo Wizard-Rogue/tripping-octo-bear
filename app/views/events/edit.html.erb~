@@ -1,4 +1,13 @@
-<%- model_class = @event.class -%>
+<!--<%- model_class = @event.class -%>
 <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
                                  :default => "Edit #{model_class.model_name.human}") %></h1>
-<%= render :partial => 'form' %>
+<%= render :partial => 'form' %>-->
+
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Events" %> <span class="divider">/</span></li>
+  <li class="active">Edit Event</li>
+<% end %>
+
+<h1>@event.name</h1>
+
+<%= render 'form' %>

@@ -2,7 +2,20 @@ class Event < ActiveRecord::Base
   belongs_to :organization
 
   attr_accessible :address, :city, :country, :description, :latitude, 
-             :longitude, :name, :organization_id, :state
+             :longitude, :name, :organization_id, :state, :start, :end
 
   has_attached_file :photo
+      t.integer :organization_id
+      t.string :name
+      t.text :description
+      t.string :address
+      t.string :city
+      t.string :state
+      t.string :country
+      t.float :latitude
+      t.float :longitude
+      t.string :supporters
+      t.datetime :start
+      t.datetime :end
+  
 end

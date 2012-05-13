@@ -1,4 +1,4 @@
-<%= simple_form_for @event, :html => { :multipart => true } do |f| %>
+<%= simple_form_for @event, :html => { :class => 'form-horizontal',:multipart => true } do |f| %>
   <%= f.input :name, :label => "Title" %>
   <%= f.input :description %>
   <%= f.input :address, :input_html => {:class => "span5"}%>

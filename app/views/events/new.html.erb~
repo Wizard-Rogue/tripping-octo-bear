@@ -5,9 +5,9 @@
 
 <% content_for :breadcrumb do %>
   <li><%= link_to "Home" %> <span class="divider">/</span></li>
-  <li class="active">New article</li>
+  <li class="active">New Event</li>
 <% end %>
 
-<h1>New Event</h1>
+<h1>Create Event</h1>
 
 <%= render 'form' %>
