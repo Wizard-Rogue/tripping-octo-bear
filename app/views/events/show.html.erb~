@@ -1,11 +1,63 @@
+
 <%- model_class = @event.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
+<p>
+<!--  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>-->
+  <%= @event.name %>
+</p>
+
+<%= image_tag @event.photo %>
+
+<p>
+<!--  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>-->
+  <%= @event.description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:address) %>:</strong><br>
+  <%= @event.address %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:city) %>:</strong><br>
+  <%= @event.city %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:state) %>:</strong><br>
+  <%= @event.state %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:country) %>:</strong><br>
+  <%= @event.country %>
+</p>
+<p>
+<!--  <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>-->
+  <%= @event.start%>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:end) %>:</strong><br>
+  <%= @event.end %>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<%- model_class = @event.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:organization_id) %>:</strong></dt>
-  <dd><%= @event.organization_id %></dd>
+<!--  <dt><strong><%= model_class.human_attribute_name(:organization_id) %>:</strong></dt>
+  <dd><%= @event.organization_id %></dd>-->
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @event.name %></dd>
+  <%= image_tag @event.photo %>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @event.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
@@ -16,25 +68,17 @@
   <dd><%= @event.state %></dd>
   <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
   <dd><%= @event.country %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+<!--  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
   <dd><%= @event.latitude %></dd>
   <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
   <dd><%= @event.longitude %></dd>
   <dt><strong><%= model_class.human_attribute_name(:supporters) %>:</strong></dt>
-  <dd><%= @event.supporters %></dd>
+  <dd><%= @event.supporters %></dd>-->
   <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
   <dd><%= @event.start %></dd>
   <dt><strong><%= model_class.human_attribute_name(:end) %>:</strong></dt>
   <dd><%= @event.end %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_file_name) %>:</strong></dt>
-  <dd><%= @event.photo_file_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_content_type) %>:</strong></dt>
-  <dd><%= @event.photo_content_type %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_file_size) %>:</strong></dt>
-  <dd><%= @event.photo_file_size %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo_updated_at) %>:</strong></dt>
-  <dd><%= @event.photo_updated_at %></dd>
-</dl>
+</dl>-->
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

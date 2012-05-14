@@ -11,9 +11,3 @@
  *= require_self
  *= require_tree .
 */
-
-p.margin
-{
-margin-left: 140px;
-}
-
