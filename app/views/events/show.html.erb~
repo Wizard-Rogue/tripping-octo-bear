@@ -26,6 +26,14 @@
   <dd><%= @event.start %></dd>
   <dt><strong><%= model_class.human_attribute_name(:end) %>:</strong></dt>
   <dd><%= @event.end %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:photo_file_name) %>:</strong></dt>
+  <dd><%= @event.photo_file_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:photo_content_type) %>:</strong></dt>
+  <dd><%= @event.photo_content_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:photo_file_size) %>:</strong></dt>
+  <dd><%= @event.photo_file_size %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:photo_updated_at) %>:</strong></dt>
+  <dd><%= @event.photo_updated_at %></dd>
 </dl>
 
 <div class="form-actions">

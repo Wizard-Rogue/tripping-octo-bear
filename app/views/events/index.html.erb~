@@ -36,6 +36,10 @@
         <td><%= event.supporters %></td>
         <td><%= event.start %></td>
         <td><%= event.end %></td>
+        <td><%= event.photo_file_name %></td>
+        <td><%= event.photo_content_type %></td>
+        <td><%= event.photo_file_size %></td>
+        <td><%= event.photo_updated_at %></td>
         <td><%=l event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
