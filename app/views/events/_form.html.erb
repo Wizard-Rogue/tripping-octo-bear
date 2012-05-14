@@ -7,7 +7,7 @@
   <%= f.input :country %>
   <%= f.input :latitude, :input_html => { :class => "span2" } %>
   <%= f.input :longitude, :input_html => { :class => "span2" } %>
-  <%= f.input :start, :start_year => 2012, :input_html => { :class => "span1" }%>
+  <%= f.input :start, :start_year => 2012, :input_html => { :class => "span1" }, :format => :long%>
   <%= f.input :end, :start_year => 2012, :input_html => { :class => "span1" } %>
   <p class="margin">
       <%= f.file_field :photo%>

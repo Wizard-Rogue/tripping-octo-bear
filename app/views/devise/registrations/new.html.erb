@@ -9,6 +9,9 @@
     <%= f.input :password_confirmation, :required => true %>
   </div>
 
+  <div>
+    <%= f.radio_button :role, "User" %> Volunteer<br/>
+    <%= f.radio_button :role, "Organization" %>Organization<br/>
   <div class="actions">
     <%= f.button :submit, "Sign up" %>
   </div>

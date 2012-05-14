@@ -1,25 +1,25 @@
 
 <% content_for :breadcrumb do %>
-  <li><%= link_to "Events" %> <span class="divider">/</span></li>
+  <li><a href="localhost:3000/events">Events</a> <span class="divider">/</span></li>
   <liclass="active">Some Event</li>
 <% end %>
 
 <%- model_class = @event.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
-<p>
+<!--<p>
   <strong><%= model_class.human_attribute_name(:organization_id) %>:</strong><br>
   <%= @event.organization_id %>
-</p>
+</p>-->
 <p>
-  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+<!--  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>-->
   <%= @event.name %>
 </p>
 
 <%= image_tag @event.photo %>
 
 <p>
-  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
+<!--  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>-->
   <%= @event.description %>
 </p>
 <p>
@@ -46,13 +46,13 @@
   <strong><%= model_class.human_attribute_name(:longitude) %>:</strong><br>
   <%= @event.longitude %>
 </p>
-<p>-->
+<p>
   <strong><%= model_class.human_attribute_name(:supporters) %>:</strong><br>
   <%= @event.supporters %>
-</p>
+</p>-->
 <p>
-  <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>
-  <%= @event.start %>
+<!--  <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>-->
+  <%= @event.start%>
 </p>
 <p>
   <strong><%= model_class.human_attribute_name(:end) %>:</strong><br>

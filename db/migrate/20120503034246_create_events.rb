@@ -11,7 +11,7 @@ class CreateEvents < ActiveRecord::Migration
       t.float :latitude
       t.float :longitude
       t.string :supporters
-      t.datetime :start
+      t.datetimeto_formatted_s(:long) :start
       t.datetime :end
 
       t.timestamps
