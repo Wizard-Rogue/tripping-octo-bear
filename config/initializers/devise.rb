@@ -19,6 +19,8 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   require "omniauth-facebook"
 	config.omniauth :facebook, '376969209011426', '827c4c375cf8005bff034b83e350f4a5'
+#	require "omniauth-twitter"
+#	config.omniauth :twitter, 'TPJKMB0GkKuk6Hd1TvSHyw', 'WaZ6kgCkf7RaABgdb4xrTcB5KgYgcZ5RgWpwdIBog'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

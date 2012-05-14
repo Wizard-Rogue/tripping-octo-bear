@@ -1,0 +1,9 @@
+class AddScreenNameToUserModel < ActiveRecord::Migration
+  def add
+    add_column :user_models, :screen_name, :string
+  end
+  
+  def down
+    remove_column :user_models, :screen_name
+  end
+end
