@@ -4,6 +4,6 @@ class AddScreenNameToUsersTable < ActiveRecord::Migration
   end
   
   def down
-    remove_column :users, :screen_name
+    add_column :users, :screen_name
   end
 end
