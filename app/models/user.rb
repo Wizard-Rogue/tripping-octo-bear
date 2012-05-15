@@ -19,11 +19,11 @@ class User < ActiveRecord::Base
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
     if user = User.where(:email => data.email).first
-      user.update_attributes(:name => data.name, :image => access_token["info"]["image"])
+      user.update_attributes(:name => data.name, :image => access_token["info"]["image"] )
       user.update_attributes( :website2 => data.link ) unless user.website1 == data.link
       user
     else # create a user with a stub password
-      User.create!(:email => data.email, :password => Devise.friendly_token[0, 20], :name => data.name, :image => access_token["info"]["image"], :website1 => data.link)
+      User.create!(:email => data.email, :password => Devise.friendly_token[0, 20], :name => data.name, :image => access_token["info"]["image"], :website1 => data.link, :is_organization => false)
     end
   end
 
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
       user.update_attributes( :website2 => access_token["info"]["urls"]["Twitter"] ) unless user.website1 == access_token["info"]["urls"]["Twitter"]
       user
     else # create a user with a stub password
-      User.create!(:screen_name => data.screen_name, :password => Devise.friendly_token[0, 20], :name => data.name, :image => data.profile_image_url, :website1 => access_token["info"]["urls"]["Twitter"])
+      User.create!(:screen_name => data.screen_name, :password => Devise.friendly_token[0, 20], :name => data.name, :image => data.profile_image_url, :website1 => access_token["info"]["urls"]["Twitter"], :is_organization => false)
     end
   end
 
