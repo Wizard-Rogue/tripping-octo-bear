@@ -22,7 +22,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.Twitter_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
-#    @user.valid?
   end
   
   def passthru

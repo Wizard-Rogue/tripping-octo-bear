@@ -10,7 +10,7 @@
 	<div id="container">
 			<p>
 			<% if current_user %>
-				<%= image_tag(current_user.image, :border=>0) %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
+				<%= image_tag(current_user.image, :border=>0) if current_user.image? %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
 			<% else %>
 				<%= link_to image_tag('facebook_64.png', :border=>0), user_omniauth_authorize_path(:facebook) %>
 				<%= link_to image_tag('twitter_64.png', :border=>0), user_omniauth_authorize_path(:twitter) %>

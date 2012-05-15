@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   # Validations
-  validates :email, presence: true
-  validates :email, uniqueness: true
+#  validates :email, presence: true
+#  validates :email, uniqueness: true
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
@@ -28,8 +28,8 @@ class User < ActiveRecord::Base
 
 	def self.find_for_twitter_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
-    if user = User.where(:screen_name => data.screen_name).first
-      user.update_attributes(:name => data.name, :image => data.profile_image_url)
+    if user = User.where(:name => data.name).first
+      user.update_attributes(:name => data.name, :image => data.profile_image_url, :screen_name => data.screen_name)
       user.update_attributes( :website2 => access_token["info"]["urls"]["Twitter"] ) unless user.website1 == access_token["info"]["urls"]["Twitter"]
       user
     else # create a user with a stub password

@@ -13,7 +13,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
   
   def twitter
-    @user.valid?
     @user = User.find_for_twitter_oauth(request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
@@ -23,6 +22,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.Twitter_data"] = request.env["omniauth.auth"]
       redirect_to new_user_registration_url
     end
+#    @user.valid?
   end
   
   def passthru
