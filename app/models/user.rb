@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :participants
 	has_many :events, :through => :participants
+	has_many :events
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable
   devise :omniauthable, :database_authenticatable, :registerable,
@@ -8,7 +9,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-  :address, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name
+  :address, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name, :latitude, :longitude, :description, :is_organization
   # attr_accessible :title, :body
   
   # Validations

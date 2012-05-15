@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120514064022) do
 
   create_table "events", :force => true do |t|
-    t.integer  "organization_id"
+    t.integer  "user_id"
     t.string   "name"
     t.text     "description"
     t.string   "address"
@@ -26,14 +26,8 @@ ActiveRecord::Schema.define(:version => 20120514064022) do
     t.string   "supporters"
     t.datetime "start"
     t.datetime "end"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  create_table "organizations", :force => true do |t|
-    t.float "latitude"
-    t.float "longitude"
-    t.text  "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "participants", :force => true do |t|
@@ -55,6 +49,10 @@ ActiveRecord::Schema.define(:version => 20120514064022) do
     t.string   "state"
     t.string   "city"
     t.string   "country"
+    t.text     "description"
+    t.boolean  "is_organization"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"

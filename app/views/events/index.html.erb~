@@ -35,4 +35,6 @@
 </table>
 
 <br />
-<%= link_to 'New Event', new_event_path if can? :create, Event %>
+<%= if can? :create, Event %>
+<%= link_to 'New Event', new_event_path %>
+<%= end %>

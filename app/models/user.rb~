@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :participants
 	has_many :events, :through => :participants
+	has_many :events
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable
   devise :omniauthable, :database_authenticatable, :registerable,
@@ -8,7 +9,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-  :address, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name
+  :address, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name, :latitude, :longitude, :description
   # attr_accessible :title, :body
   
   # Validations
@@ -28,8 +29,8 @@ class User < ActiveRecord::Base
 
 	def self.find_for_twitter_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
-    if user = User.where(:screen_name => data.screen_name).first
-      user.update_attributes(:name => data.name, :image => data.profile_image_url)
+    if user = User.where(:name => data.name).first
+      user.update_attributes(:name => data.name, :image => data.profile_image_url, :screen_name => data.screen_name)
       user.update_attributes( :website2 => access_token["info"]["urls"]["Twitter"] ) unless user.website1 == access_token["info"]["urls"]["Twitter"]
       user
     else # create a user with a stub password
