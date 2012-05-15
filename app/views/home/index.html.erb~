@@ -1,0 +1,67 @@
+<!--<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>-->
+
+
+<div id="title"></div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span9">
+      <!-- carousel and other stuff -->
+
+      <div id="myCarousel" class="carousel">
+      <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+              <div class="hero-unit">
+                <div class="span5">
+                  <h1>Testing Subject #1</h1>
+                  <blockquote>Testing 1... 2... 3...</blockquote>
+                  <a class="btn btn-primary btn-large">Click here</a>
+                </div>
+                <div class="span6"> 
+                  <%= image_tag("1.jpg", :alt => "rss feed", :size => "360x260") %>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="hero-unit">
+                <div class="span5">
+                  <h1>Testing Subject #2</h1>
+                  <blockquote>Testing testing testing</blockquote>
+                  <a class="btn btn-primary btn-large">Click here</a>
+                </div>
+                <div class="span6"> <%= image_tag("2.jpg", :alt => "rss feed", :size => "360x260") %> </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="hero-unit">
+                <div class="span5">
+                  <h1>Testing Subject #3</h1>
+                  <blockquote>Test mic 1... 2... 3...</blockquote>
+                  <a class="btn btn-primary btn-large">Click here</a>
+                </div>
+                <div class="span6"> <%= image_tag("3.jpg", :alt => "rss feed", :size => "360x260") %> </div>
+              </div>
+            </div>
+
+        </div>
+     <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+
+
+
+
+    </div>
+
+    <div class="span2">
+      <!-- login and calendar -->
+    </div>
+
+  </div>
+</div>
+
+
