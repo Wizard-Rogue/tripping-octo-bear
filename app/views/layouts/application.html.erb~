@@ -7,7 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar">
+<header>
+<div class="navbar navbar-fixed">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -37,7 +38,7 @@
             </li>-->
           </ul>
           <form class="navbar-search pull-left" action="">
-            <input type="text" class="search-query span3" placeholder="Search">
+            <input type="text" class="search-query" placeholder="Search">
           </form>
           <ul class="nav pull-right">
 <!--            <li><a href="#">User</a></li>-->
@@ -57,16 +58,23 @@
       </div>
     </div><!-- /navbar-inner -->
   </div>
-	<div id="container">
-			<p>
-			<% if current_user %>
-				<%= image_tag(current_user.image, :border=>0) %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
-			<% else %>
-				<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> or <%= link_to('Sign In', new_user_session_path, :method => :new) %>
-			<% end %>
-		</p>
-	</div>
+</div>
+</header>
+
+  <div id="container">
+    <div>
+    <p>
+      <% if current_user %>
+        <%= image_tag(current_user.image, :border=>0) %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> or <%= link_to('Sign In', new_user_session_path, :method => :new) %>
+      <% end %>
+    </p>
+    </div>
+  </div>
 <%= yield %>
 
 </body>
 </html>
+
+

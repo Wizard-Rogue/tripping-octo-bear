@@ -1,5 +1,7 @@
+<div id="container">
+
 <%= simple_form_for @event, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
-<!--  <%= f.input :organization_id %>-->
+
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :address %>
@@ -15,10 +17,12 @@
   <%= f.input :photo_content_type %>
   <%= f.input :photo_file_size %>
   <%= f.input :photo_updated_at %>-->
-  <p class="margin"> <%= f.file_field :photo, :selected => "Philippines", :include_blank => false %></p>
+  <p class="margin"> <%= f.file_field :photo %></p>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 events_path, :class => 'btn' %>
   </div>
 <% end %>
+
+</div>
