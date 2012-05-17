@@ -1,0 +1,5 @@
+class AddNumberOfVolunteersToEventsTable < ActiveRecord::Migration
+  def change
+    add_column :events_tables, :number_of_volunteers, :integer
+  end
+end

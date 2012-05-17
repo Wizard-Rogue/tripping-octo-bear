@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-	has_many :participants
-	has_many :events, :through => :participants
+	has_and_belongs_to_many :events,
+                          :join_table => "events_users",
+                          :foreign_key => "event_id",
+                          :associated_foreign_key => "user_id"
 	has_many :events
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable
@@ -28,7 +30,7 @@ class User < ActiveRecord::Base
   end
 
 	def self.create_with_twitter(access_token, signed_in_resource=nil)
-    User.create!( :screen_name => access_token.screen_name, :email => access_token.email, :password => Devise.friendly_token[0, 20], :name => access_token.name, :image => access_token.profile_image_url, :website1 => access_token.website, :is_organization => false )
+    self.create!( :screen_name => access_token.screen_name, :email => access_token.email, :password => Devise.friendly_token[0, 20], :name => access_token.name, :image => access_token.profile_image_url, :website1 => access_token.website, :is_organization => false )
   end
 
   def self.new_with_session(params, session)

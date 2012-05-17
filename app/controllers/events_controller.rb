@@ -10,6 +10,18 @@ class EventsController < ApplicationController
       format.json { render json: @events }
     end
   end
+  
+  def join
+  	if current_user
+  		@events_users = Events_users.new
+  		@events_users.user = current_user
+  		@events_users.event = @event
+  		@events_users.save
+  		redirect_to events_url
+  	else
+  		redirect_to new_user_session_url
+  	end
+  end
 
   # GET /events/1
   # GET /events/1.json

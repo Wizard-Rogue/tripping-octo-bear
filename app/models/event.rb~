@@ -1,6 +1,8 @@
 class Event < ActiveRecord::Base
 	belongs_to :user
-	has_many :participants
-	has_many :users, :through => :participants
-  attr_accessible :address, :city, :country, :description, :latitude, :longitude, :name, :organization_id, :state
+	has_and_belongs_to_many :users,
+                          :join_table => "events_users",
+                          :foreign_key => "user_id",
+                          :associated_foreign_key => "event_id"
+  attr_accessible :address, :city, :country, :description, :latitude, :longitude, :name, :user_id, :state
 end

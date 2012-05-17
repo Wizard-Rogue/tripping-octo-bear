@@ -1,23 +1,40 @@
-<h2>Sign up</h2>
+<%= if session["devise.twitter_data"] %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<h2>Apologies!</h2>
+	<h3> Twitter does not provide us with an email address. Please be so kind as to provide yours below:</h3>
 
-	<div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<%= devise_error_messages! %>
+		
+		<div><%= f.label :email %><br />
+		<%= f.email_field :email %></div>
+
+		<div><%= f.submit "Sign up" %></div>
+	<% end %>
 	
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<%= else %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+	<h2>Sign up</h2>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-  
-  <div><%= f.check_box :is_organization %> <%= f.label :is_organization %></div>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		<%= devise_error_messages! %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+		<div><%= f.label :name %><br />
+		<%= f.text_field :name %></div>
+	
+		<div><%= f.label :email %><br />
+		<%= f.email_field :email %></div>
+
+		<div><%= f.label :password %><br />
+		<%= f.password_field :password %></div>
+
+		<div><%= f.label :password_confirmation %><br />
+		<%= f.password_field :password_confirmation %></div>
+		
+		<div><%= f.check_box :is_organization %> <%= f.label :is_organization %></div>
+
+		<div><%= f.submit "Sign up" %></div>
+	<% end %>
+<%= end %>
 
 <%= render "links" %>

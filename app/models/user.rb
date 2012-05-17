@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :participants
-	has_many :events, :through => :participants
+	has_and_belongs_to_many :events
 	has_many :events
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable

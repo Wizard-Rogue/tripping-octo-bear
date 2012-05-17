@@ -45,7 +45,7 @@
   <%= @event.longitude %>
 </p>
 
-
+<%= link_to 'Join', @event, confirm: 'Really join this?', method: :join %> |
 <%= link_to 'Edit', edit_event_path(@event) if can? :update, @event %> |
 <%= link_to 'Destroy', @event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %> |
 <%= link_to 'Back', events_path %>

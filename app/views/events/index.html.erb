@@ -28,6 +28,7 @@
     <td><%= event.latitude %></td>
     <td><%= event.longitude %></td>
     <td><%= link_to 'Show', event %></td>
+    <td><%= link_to 'Join', event, confirm: 'Really join this?', method: :join %></td>
     <td><%= link_to 'Edit', edit_event_path(event) if can? :update, @event %></td>
     <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %></td>
   </tr>

@@ -14,6 +14,6 @@ class RegistrationsController < Devise::RegistrationsController
 			@user = User.create_with_twitter(session["devise.twitter_data"], current_user)
 		end
 		flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "twitter"
-		redirect_to new_user_registration_url
+		sign_in_and_redirect @user, :event => :authentication
 	end
 end
