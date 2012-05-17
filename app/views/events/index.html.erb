@@ -32,7 +32,7 @@
     <% if event.users.where(:id => current_user.id).first.nil? %>
 			<%= button_to "Volunteer! :)", event, confirm: 'Really join this?', method: :join %>
 		<% else %>
-			<%= button_to "Unvolunteer :(", remove_path(event), confirm: 'Do you really want to unvolunteer?' %>
+			<%= button_to "Unvolunteer :(", event, confirm: 'Do you really want to unvolunteer?', method: :remove %>
 		<% end %>
     </td>
     <td><%= link_to 'Edit', edit_event_path(event) if can? :update, event %></td>
