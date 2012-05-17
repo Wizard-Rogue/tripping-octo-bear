@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'devise'
+gem 'geocoder'
 gem 'cancan'
 gem 'faraday'
 gem 'omniauth'

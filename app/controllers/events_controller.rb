@@ -13,11 +13,13 @@ class EventsController < ApplicationController
   
   def join
   	if current_user
-  		@events_users = Events_users.new
-  		@events_users.user = current_user
-  		@events_users.event = @event
-  		@events_users.save
-  		redirect_to events_url
+  		if @event.users.where(:id => current_user.id).first.nil?
+				@event.users << current_user
+				@event.save
+				redirect_to events_url
+			else
+				redirect_to events_url, notice: 'Already joined this event'
+			end
   	else
   		redirect_to new_user_session_url
   	end
@@ -87,5 +89,18 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url }
       format.json { head :no_content }
     end
+  end
+  
+  def remove
+  	if current_user
+  		if @case = @event.users.where(:id => current_user.id).first
+				@case.destroy
+				redirect_to root_url, notice: 'Removed event'
+			else
+				redirect_to root_url, notice: 'You have not volunteered for this event'
+			end
+  	else
+  		redirect_to new_user_session_url
+  	end
   end
 end

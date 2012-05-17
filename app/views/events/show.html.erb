@@ -36,7 +36,7 @@
 </p>
 
 <p>
-  <b>Latitude:</b>
+  <b>Longitude:</b>
   <%= @event.latitude %>
 </p>
 
@@ -45,7 +45,17 @@
   <%= @event.longitude %>
 </p>
 
-<%= link_to 'Join', @event, confirm: 'Really join this?', method: :join %> |
-<%= link_to 'Edit', edit_event_path(@event) if can? :update, @event %> |
-<%= link_to 'Destroy', @event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %> |
+<p>
+  <b>This event's participants:</b>
+  <% @event.users.all.each do |u| %>
+  	<li><%= u.name %></li>
+  <% end %>
+</p>
+<% if @event.users.where(:id => current_user.id).first.nil? %>
+	<%= button_to "Volunteer! :)", @event, confirm: 'Really join this?', method: :join %>
+<% else %>
+	<%= button_to "Unvolunteer :(", @event, confirm: 'Do you really want to unvolunteer?', method: :remove %>
+<% end %><br />
+<%= link_to 'Edit', edit_event_path(@event) if can? :update, @event %> <br />
+<%= link_to 'Destroy', @event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %> <br />
 <%= link_to 'Back', events_path %>

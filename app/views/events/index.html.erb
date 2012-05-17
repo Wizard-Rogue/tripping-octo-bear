@@ -18,7 +18,7 @@
 
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.user_id %></td>
+    <td><%= event.organization.name %></td>
     <td><%= event.name %></td>
     <td><%= event.description %></td>
     <td><%= event.address %></td>
@@ -28,9 +28,15 @@
     <td><%= event.latitude %></td>
     <td><%= event.longitude %></td>
     <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Join', event, confirm: 'Really join this?', method: :join %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) if can? :update, @event %></td>
-    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %></td>
+    <td>
+    <% if event.users.where(:id => current_user.id).first.nil? %>
+			<%= button_to "Volunteer! :)", event, confirm: 'Really join this?', method: :join %>
+		<% else %>
+			<%= button_to "Unvolunteer :(", remove_path(event), confirm: 'Do you really want to unvolunteer?' %>
+		<% end %>
+    </td>
+    <td><%= link_to 'Edit', edit_event_path(event) if can? :update, event %></td>
+    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete if can? :destroy, event %></td>
   </tr>
 <% end %>
 </table>
