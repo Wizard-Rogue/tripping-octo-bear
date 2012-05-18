@@ -29,10 +29,14 @@
     <td><%= event.longitude %></td>
     <td><%= link_to 'Show', event %></td>
     <td>
-    <% if event.users.where(:id => current_user.id).first.nil? %>
-			<%= button_to "Volunteer! :)", event, confirm: 'Really join this?', method: :join %>
+    <% if user_signed_in? %>
+		  <% unless event.joined?(current_user) %>
+				<%= button_to "Volunteer! :)", event, confirm: 'Really join this?', method: :join %>
+			<% else %>
+				<%= button_to "Unvolunteer :(", { :controller => :events, :action => :remove }, confirm: 'Do you really want to unvolunteer?', :method => :delete %>
+			<% end %>
 		<% else %>
-			<%= button_to "Unvolunteer :(", remove_path(event), confirm: 'Do you really want to unvolunteer?' %>
+			<%= button_to "Volunteer! :)", event, confirm: 'Really join this?', method: :join %>
 		<% end %>
     </td>
     <td><%= link_to 'Edit', edit_event_path(event) if can? :update, event %></td>

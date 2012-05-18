@@ -1,5 +1,6 @@
 TrippingOctoBear::Application.routes.draw do
   get "home/index"
+  delete "events/:id", :controller => :events, :action => :remove, :as => :remove
 
   resources :events
 
@@ -14,7 +15,7 @@ TrippingOctoBear::Application.routes.draw do
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 	match 'events/:id' => 'events#join', :as => :join
-	match 'events/:id' => 'events#remove', :as => :remove, method: :delete
+#	match 'events/:id' => 'events#remove', :as => :remove
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)

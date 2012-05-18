@@ -7,7 +7,7 @@ class Ability
     if user.is_organization?
     	can :read, :all
     	can :join, :all
-    	can :remove, :all
+    	can :delete, :all
     	can :create, Event
     	can :update, Event do |event|
     		event.try(:user) == user
@@ -18,7 +18,7 @@ class Ability
     else
     	can :join, :all
     	can :read, :all
-    	can :remove, :all
+    	can :delete, :all
     end
   end
 end
