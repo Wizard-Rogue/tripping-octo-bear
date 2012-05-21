@@ -1,13 +1,13 @@
 
 <%- model_class = @event.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<!--<h1><%=t '.title', :default => model_class.model_name.human %></h1>-->
 
-<p>
+<h1>
 <!--  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>-->
   <%= @event.name %>
-</p>
+</h1>
 
-<%= image_tag @event.photo %>
+<%= image_tag @event.photo(:medium) %>
 
 <p>
 <!--  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>-->
@@ -30,7 +30,7 @@
   <%= @event.country %>
 </p>
 <p>
-<!--  <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>-->
+  <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>
   <%= @event.start%>
 </p>
 <p>
@@ -53,8 +53,6 @@
 <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
 <dl class="dl-horizontal">
-<!--  <dt><strong><%= model_class.human_attribute_name(:organization_id) %>:</strong></dt>
-  <dd><%= @event.organization_id %></dd>-->
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @event.name %></dd>
   <%= image_tag @event.photo %>
@@ -73,7 +71,7 @@
   <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
   <dd><%= @event.longitude %></dd>
   <dt><strong><%= model_class.human_attribute_name(:supporters) %>:</strong></dt>
-  <dd><%= @event.supporters %></dd>-->
+  <dd><%= @event.supporters %></dd>
   <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
   <dd><%= @event.start %></dd>
   <dt><strong><%= model_class.human_attribute_name(:end) %>:</strong></dt>

@@ -1,11 +1,12 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home"%> <span class="divider">/</span></li>  <li><%= link_to "Events" %></li>
+<% end %>
 
 <%- model_class = Event.new.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 <table class="table table-striped">
   <thead>
     <tr>
-<!--      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:organization_id) %></th>-->
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
@@ -28,8 +29,6 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-<!--        <td><%= event.id %></td>
-        <td><%= event.organization_id %></td>-->
         <td><%= link_to event.name, event_path(event) %></td>
         <td><%= event.description %></td>
         <td><%= event.address %></td>

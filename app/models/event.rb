@@ -7,6 +7,6 @@ class Event < ActiveRecord::Base
   attr_accessible :address, :city, :country, :description, :latitude, 
              :longitude, :name, :organization_id, :state, :start, :end, :photo
 
-	has_attached_file :photo
+	has_attached_file :photo, :styles => {:small => "150x150!", :medium => "250x250!", :large => "300x300", :thumbnail => "100x100"}
 
 end
