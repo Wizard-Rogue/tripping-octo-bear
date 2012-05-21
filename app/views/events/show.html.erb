@@ -1,56 +1,47 @@
-<p id="notice"><%= notice %></p>
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home" %> <span class="divider">/</span></li>
+  <li class="active"><%= @event.name %></li>
+<% end %>
 
-<p>
-  <b>Organization:</b>
-  <%= @event.organization.name %>
-</p>
+<%- model_class = @event.class -%>
+<!--<h1><%=t '.title', :default => model_class.model_name.human %></h1>-->
 
-<p>
-  <b>Name:</b>
+<h1>
+<!--  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>-->
   <%= @event.name %>
-</p>
+</h1>
+
+<%= image_tag @event.photo(:medium) %>
 
 <p>
-  <b>Description:</b>
+<!--  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>-->
   <%= @event.description %>
 </p>
-
 <p>
-  <b>Address:</b>
+  <strong><%= model_class.human_attribute_name(:address) %>:</strong><br>
   <%= @event.address %>
 </p>
-
 <p>
-  <b>City:</b>
+  <strong><%= model_class.human_attribute_name(:city) %>:</strong><br>
   <%= @event.city %>
 </p>
-
 <p>
-  <b>State:</b>
+  <strong><%= model_class.human_attribute_name(:state) %>:</strong><br>
   <%= @event.state %>
 </p>
-
 <p>
-  <b>Country:</b>
+  <strong><%= model_class.human_attribute_name(:country) %>:</strong><br>
   <%= @event.country %>
 </p>
-
 <p>
-  <b>Longitude:</b>
-  <%= @event.latitude %>
+  <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>
+  <%= @event.start%>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:end) %>:</strong><br>
+  <%= @event.end %>
 </p>
 
-<p>
-  <b>Longitude:</b>
-  <%= @event.longitude %>
-</p>
-
-<p>
-  <b>This event's participants:</b>
-  <% @event.users.all.each do |u| %>
-  	<li><%= u.name %></li>
-  <% end %>
-</p>
 <% if user_signed_in? %>
   <% unless @event.joined?(current_user) %>
 		<%= button_to "Volunteer! :)", @event, confirm: 'Really join this?', method: :join %>
@@ -63,3 +54,56 @@
 <%= link_to 'Edit', edit_event_path(@event) if can? :update, @event %> <br />
 <%= link_to 'Destroy', @event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %> <br />
 <%= link_to 'Back', events_path %>
+=======
+
+
+
+
+
+
+
+
+
+
+
+<!--<%- model_class = @event.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @event.name %></dd>
+  <%= image_tag @event.photo %>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @event.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @event.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @event.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @event.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @event.country %></dd>
+<!--  <dt><strong><%= model_class.human_attribute_name(:latitude) %>:</strong></dt>
+  <dd><%= @event.latitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:longitude) %>:</strong></dt>
+  <dd><%= @event.longitude %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:supporters) %>:</strong></dt>
+  <dd><%= @event.supporters %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start) %>:</strong></dt>
+  <dd><%= @event.start %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end) %>:</strong></dt>
+  <dd><%= @event.end %></dd>
+</dl>-->
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              events_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_event_path(@event), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              event_path(@event),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>
+>>>>>>> forms2

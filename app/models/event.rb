@@ -16,4 +16,15 @@ class Event < ActiveRecord::Base
   def address
   	[street, city, state, country].compact.join(', ')
   end
+
+	belongs_to :organization
+	has_many :participants
+	has_many :users, :through => :participants
+
+
+  attr_accessible :address, :city, :country, :description, :latitude, 
+             :longitude, :name, :organization_id, :state, :start, :end, :photo
+
+	has_attached_file :photo, :styles => {:small => "150x150!", :medium => "250x250!", :large => "300x300", :thumbnail => "100x100"}
+
 end

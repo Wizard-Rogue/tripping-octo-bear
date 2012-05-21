@@ -11,7 +11,7 @@
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 430,
+				"buffer_size": 503,
 				"line_ending": "Unix"
 			}
 		}
@@ -82,15 +82,15 @@
 					"file": ".gitignore",
 					"settings":
 					{
-						"buffer_size": 430,
+						"buffer_size": 503,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								489,
+								489
 							]
 						],
 						"settings":

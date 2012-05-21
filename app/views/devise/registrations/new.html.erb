@@ -1,8 +1,9 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 
+<<<<<<< HEAD
 	<div><%= f.label :name %><br />
   <%= f.text_field :name %></div>
 	
@@ -18,6 +19,18 @@
   <div><%= f.check_box :is_organization %> <%= f.label :is_organization %></div>
 
   <div><%= f.submit "Sign up" %></div>
+=======
+  <div class="inputs">
+    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :is_organization, :as => :radio, :label => "Account Type", :collection => [["Volunteer", false], ["Organization", true]]
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
+>>>>>>> forms2
 <% end %>
 
 <%= render "links" %>
