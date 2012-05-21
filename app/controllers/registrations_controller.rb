@@ -17,8 +17,8 @@ class RegistrationsController < Devise::RegistrationsController
 			flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "twitter"
 			sign_in_and_redirect @user, :event => :authentication
 		else
+			session[:redirect] = true
 			super
 		end
 	end
-	
 end

@@ -3,50 +3,14 @@
 	{
 		"selected_items":
 		[
+			[
+				"is",
+				"is_organization"
+			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "Gemfile",
-			"settings":
-			{
-				"buffer_size": 929,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 1060,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/registrations/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 1086,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/event.rb",
-			"settings":
-			{
-				"buffer_size": 510,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/registrations_controller.rb",
-			"settings":
-			{
-				"buffer_size": 876,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -72,9 +36,28 @@
 	},
 	"file_history":
 	[
+		"/home/jabo/data/tripping_octo_bear/app/models/ability.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/events/_form.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/models/user.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/application_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/events_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/registrations/edit.html.erb",
+		"/home/jabo/data/tripping_octo_bear/config/routes.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/layouts/application.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/registrations_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/events/index.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/models/event.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/events/show.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/devise/registrations/edit.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/registrations/new_organization.html.erb",
+		"/home/jabo/data/tripping_octo_bear/Gemfile",
+		"/home/jabo/data/tripping_octo_bear/app/views/registrations/new.html.erb",
+		"/home/jabo/data/tripping_octo_bear/config/application.rb",
+		"/home/jabo/data/tripping_octo_bear/test/fixtures/users.yml",
+		"/home/jabo/data/tripping_octo_bear/db/migrate/20120521023327_rename_address_column_in_users_to_street.rb",
+		"/home/jabo/data/tripping_octo_bear/db/migrate/20120521023317_rename_address_column_in_events_to_street.rb",
 		"/home/jabo/data/tripping_octo_bear/db/migrate/20120510034636_add_name_column_to_users_table.rb",
 		"/home/jabo/data/tripping_octo_bear/db/migrate/20120521022522_remove_supporters_column_from_events_table.rb",
-		"/home/jabo/data/tripping_octo_bear/app/controllers/events_controller.rb",
 		"/home/jabo/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings"
 	],
 	"find":
@@ -93,6 +76,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"country",
+			"  ",
 			"remove"
 		],
 		"highlight": true,
@@ -111,141 +96,8 @@
 	"groups":
 	[
 		{
-			"selected": 3,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "Gemfile",
-					"settings":
-					{
-						"buffer_size": 929,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 1060,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								937,
-								937
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/registrations/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 1086,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								472,
-								472
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/event.rb",
-					"settings":
-					{
-						"buffer_size": 510,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								446,
-								446
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/controllers/registrations_controller.rb",
-					"settings":
-					{
-						"buffer_size": 876,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								613,
-								613
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -291,6 +143,98 @@
 		"selected_items":
 		[
 			[
+				"eve",
+				"app/models/event.rb"
+			],
+			[
+				"event",
+				"app/models/event.rb"
+			],
+			[
+				"eventsshow",
+				"app/views/events/show.html.erb"
+			],
+			[
+				"application_con",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"abili",
+				"app/models/ability.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"viewevents",
+				"app/views/events/_form.html.erb"
+			],
+			[
+				"registrationsnew",
+				"app/views/registrations/new.html.erb"
+			],
+			[
+				"eventindex",
+				"app/views/events/index.html.erb"
+			],
+			[
+				"appviewappli",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"routes.",
+				"config/routes.rb"
+			],
+			[
+				"events_",
+				"app/controllers/events_controller.rb"
+			],
+			[
+				"registrations_c",
+				"app/controllers/registrations_controller.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"event_form",
+				"app/views/events/_form.html.erb"
+			],
+			[
+				"events_c",
+				"app/controllers/events_controller.rb"
+			],
+			[
+				"applicationcon",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"application.",
+				"config/application.rb"
+			],
+			[
+				"viewappl",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"us",
+				"app/models/user.rb"
+			],
+			[
+				"users",
+				"test/fixtures/users.yml"
+			],
+			[
+				"dbmigraterename",
+				"db/migrate/20120521023327_rename_address_column_in_users_to_street.rb"
+			],
+			[
+				"migraterename",
+				"db/migrate/20120521023317_rename_address_column_in_events_to_street.rb"
+			],
+			[
 				"registrations_con",
 				"app/controllers/registrations_controller.rb"
 			],
@@ -305,10 +249,6 @@
 			[
 				"dbmigrateremove",
 				"db/migrate/20120521022522_remove_supporters_column_from_events_table.rb"
-			],
-			[
-				"registrationsnew",
-				"app/views/registrations/new.html.erb"
 			],
 			[
 				"application.html.",
@@ -353,6 +293,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 220.0,
 	"status_bar_visible": true
 }

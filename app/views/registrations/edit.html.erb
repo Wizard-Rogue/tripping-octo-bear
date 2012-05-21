@@ -1,7 +1,13 @@
+<% if current_user.is_organization %>
+<h2> Please fill up the form below to be registered as a validated organization:</h2>
+<% else %>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% end %>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
+  <% if session[:redirect] %>
+  <% else %>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
@@ -12,8 +18,44 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <% end %>
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
+
+  <div><h2>Other Information</h2>
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= f.label :street %><br />
+      <%= f.text_field :street %>
+    </div>
+    <div class="field">
+      <%= f.label :city %><br />
+      <%= f.text_field :city %>
+    </div>
+    <div class="field">
+      <%= f.label :state %><br />
+      <%= f.text_field :state %>
+    </div>
+    <div class="field">
+      <%= f.label :country %><br />
+      <%= f.text_field :country %>
+    </div>
+    <div class="field">
+      <%= f.label :website1 %><br />
+      <%= f.text_field :website1 %>
+    </div>
+    <div class="field">
+      <%= f.label :website2 %><br />
+      <%= f.text_field :website2 %>
+    </div>
+    <div class="field">
+      <%= f.label :phone %><br />
+      <%= f.text_field :phone %>
+    </div>
+  </div>
 
   <div><%= f.submit "Update" %></div>
 <% end %>

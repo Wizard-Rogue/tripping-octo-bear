@@ -48,9 +48,26 @@
 <p>
   <b>This event's participants:</b>
   <% @event.users.all.each do |u| %>
-  	<li><%= u.name %></li>
+  	<% if @event.organization.name = u.name %>
+      <% unless u.is_organization %>
+      <li><%= u.name %></li>
+      <% end %>
+    <% end %>
   <% end %>
 </p>
+
+<p>
+  <b>This event's supporters:</b>
+  <% @event.users.all.each do |u| %>
+    <% unless @event.organization.name = u.name %>
+    <% else %>
+      <% if u.is_organization %>
+      <li><%= u.name %></li>
+      <% end %>
+    <% end %>
+  <% end %>
+</p>
+
 <% if user_signed_in? %>
   <% unless @event.joined?(current_user) %>
 		<%= button_to "Volunteer! :)", @event, confirm: 'Really join this?', method: :join %>
@@ -59,7 +76,7 @@
 	<% end %>
 <% else %>
 	<%= button_to "Volunteer! :)", @event, confirm: 'Really join this?', method: :join %>
-<% end %><br />
-<%= link_to 'Edit', edit_event_path(@event) if can? :update, @event %> <br />
-<%= link_to 'Destroy', @event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %> <br />
+<% end %>
+<%= link_to 'Edit', edit_event_path(@event) if can? :update, @event %> 
+<%= link_to 'Destroy', @event, confirm: 'Are you sure?', method: :delete if can? :destroy, @event %> 
 <%= link_to 'Back', events_path %>

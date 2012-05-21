@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-  :address, :street, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name, :latitude, :longitude, :description, :is_organization
+  :address, :street, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name,
+  :latitude, :longitude, :description, :is_organization
   # attr_accessible :title, :body
   
   # Validations
