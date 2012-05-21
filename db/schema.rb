@@ -27,11 +27,11 @@ ActiveRecord::Schema.define(:version => 20120521023327) do
     t.datetime "end"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-    t.integer  "number_of_volunteers"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "number_of_volunteers"
   end
 
   create_table "events_users", :id => false, :force => true do |t|

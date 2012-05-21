@@ -1,6 +1,6 @@
 
 <% content_for :breadcrumb do %>
-  <li><%= link_to "Home"%> <span class="divider">/</span></li>  <li><%= link_to "Events" %></li>
+  <li><%= link_to "Home"%> <span class="divider">/</span></li>  <li><%= link_to "Events", events_path %></li>
 <% end %>
 
 <%- model_class = Event.new.class -%>
@@ -10,19 +10,12 @@
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:street) %></th>
       <th><%= model_class.human_attribute_name(:city) %></th>
       <th><%= model_class.human_attribute_name(:state) %></th>
       <th><%= model_class.human_attribute_name(:country) %></th>
-<!--      <th><%= model_class.human_attribute_name(:latitude) %></th>
-      <th><%= model_class.human_attribute_name(:longitude) %></th>
-      <th><%= model_class.human_attribute_name(:supporters) %></th>-->
       <th><%= model_class.human_attribute_name(:start) %></th>
       <th><%= model_class.human_attribute_name(:end) %></th>
-<!--      <th><%= model_class.human_attribute_name(:photo_file_name) %></th>
-      <th><%= model_class.human_attribute_name(:photo_content_type) %></th>
-      <th><%= model_class.human_attribute_name(:photo_file_size) %></th>
-      <th><%= model_class.human_attribute_name(:photo_updated_at) %></th>-->
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -32,19 +25,12 @@
       <tr>
         <td><%= link_to event.name, event_path(event) %></td>
         <td><%= event.description %></td>
-        <td><%= event.address %></td>
+        <td><%= event.street %></td>
         <td><%= event.city %></td>
         <td><%= event.state %></td>
         <td><%= event.country %></td>
-<!--        <td><%= event.latitude %></td>
-        <td><%= event.longitude %></td>
-        <td><%= event.supporters %></td>-->
         <td><%= event.start %></td>
         <td><%= event.end %></td>
-<!--        <td><%= event.photo_file_name %></td>
-        <td><%= event.photo_content_type %></td>
-        <td><%= event.photo_file_size %></td>
-        <td><%= event.photo_updated_at %></td>-->
         <td><%=l event.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

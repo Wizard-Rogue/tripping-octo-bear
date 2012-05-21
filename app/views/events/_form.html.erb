@@ -4,19 +4,12 @@
 
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :address %>
+  <%= f.input :street %>
   <%= f.input :city %>
   <%= f.input :state %>
-  <%= f.input :country, :include_blank => false, :priority_countries => "Philippines" %>
-<!--  <%= f.input :latitude %>
-  <%= f.input :longitude %>
-  <%= f.input :supporters %>-->
+  <%= f.input :country, :include_blank => false, :selected => "Philippines" %>
   <%= f.input :start, :start_year => 2012, :input_html => { :class => "span1" }, :format => :long%>
   <%= f.input :end, :start_year => 2012, :input_html => { :class => "span1" } %>
-<!--  <%= f.input :photo_file_name %>
-  <%= f.input :photo_content_type %>
-  <%= f.input :photo_file_size %>
-  <%= f.input :photo_updated_at %>-->
   <p class="margin"> <%= f.file_field :photo %></p>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
