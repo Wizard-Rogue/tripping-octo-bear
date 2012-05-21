@@ -11,19 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120517073320) do
+ActiveRecord::Schema.define(:version => 20120521023327) do
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.text     "description"
-    t.string   "address"
+    t.string   "street"
     t.string   "city"
     t.string   "state"
     t.string   "country"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "supporters"
     t.datetime "start"
     t.datetime "end"
     t.datetime "created_at",           :null => false
@@ -42,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20120517073320) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string   "address"
+    t.string   "street"
     t.string   "image"
     t.string   "phone"
     t.string   "contact_number"

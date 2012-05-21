@@ -8,13 +8,17 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-  :address, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name, :latitude, :longitude, :description, :is_organization
+  :address, :street, :city, :state, :country, :image, :phone, :website1, :website2, :contact_number, :name, :screen_name, :latitude, :longitude, :description, :is_organization
   # attr_accessible :title, :body
   
   # Validations
 #  validates :email, presence: true
 #  validates :email, uniqueness: true
   
+  # Geocode
+  geocoded_by :address
+  after_validation :geocode
+
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token.extra.raw_info
     if user = User.where(:email => data.email).first
@@ -40,5 +44,9 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0, 20]
       end
     end
+  end
+
+  def address
+    [street, city, state, country].compact.join(', ')
   end
 end

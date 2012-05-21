@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TrippingOctoBear</title>
+  <title>Kabayanihan</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -14,11 +14,18 @@
 			<% else %>
 				<%= link_to image_tag('facebook_64.png', :border=>0), user_omniauth_authorize_path(:facebook) %>
 				<%= link_to image_tag('twitter_64.png', :border=>0), user_omniauth_authorize_path(:twitter) %>
-				 or <%= link_to('Sign In', new_user_session_path, :method => :new) %>
+				 or <%= link_to('Sign In', new_user_session_path) %>
 			<% end %>
 		</p>
 	</div>
-<%= yield %>
-
+<div id="main-container" class="container">
+    <% flash.each do |key, message| %>
+      <div class="alert">
+        <%= content_tag :a, 'x', :class => 'close', :'data-dismiss' => 'alert' %>
+        <p><%= message %></p>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>
