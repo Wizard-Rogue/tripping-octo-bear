@@ -1,4 +1,12 @@
 TrippingOctoBear::Application.routes.draw do
+  get "my_events", :controller => :my_events, :action => :show, :as => :my_events
+
+  get "my_profile", :controller => :volunteers, :action => :show, :as => :my_profile
+
+  get "organizations/:id", :controller => :organizations, :action => :show, :as => :profile
+
+  get "registered_organizations", :controller => :organizations, :action => :index, :as => :organizations
+
   get "home/index"
   delete "events/remove/:id", :controller => :events, :action => :remove, :as => :remove
 

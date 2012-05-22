@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"my_",
+				"my_events"
+			],
+			[
 				"fa",
 				"facebook_link"
 			],
@@ -19,15 +23,31 @@
 			"file": "app/controllers/registrations_controller.rb",
 			"settings":
 			{
-				"buffer_size": 959,
+				"buffer_size": 902,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/events_controller.rb",
+			"file": "app/controllers/application_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2773,
+				"buffer_size": 410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 2398,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/registrations/edit.html.erb",
+			"settings":
+			{
+				"buffer_size": 1675,
 				"line_ending": "Unix"
 			}
 		}
@@ -56,6 +76,25 @@
 	},
 	"file_history":
 	[
+		"/home/jabo/data/tripping_octo_bear/app/controllers/users/omniauth_callbacks_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/users_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/events_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/profile/_user_profile.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/volunteers_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/organizations/show.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/my_events_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/organizations_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/layouts/application.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/organizations/index.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/my_events/show.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/events/index.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/events/show.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/volunteers/show.html.erb",
+		"/home/jabo/data/tripping_octo_bear/config/routes.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/application_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/controllers/registrations_controller.rb",
+		"/home/jabo/data/tripping_octo_bear/app/views/registrations/new.html.erb",
+		"/home/jabo/data/tripping_octo_bear/app/views/registrations/edit.html.erb",
 		"/home/jabo/data/tripping_octo_bear/tripping-octobear.sublime-project",
 		"/home/jabo/bengga/tripid/app/controllers/cars_controller.rb",
 		"/home/jabo/bengga/tripid/Gemfile",
@@ -89,6 +128,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"@user",
 			"boolean",
 			"car",
 			"@driver",
@@ -110,7 +150,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -118,15 +158,15 @@
 					"file": "app/controllers/registrations_controller.rb",
 					"settings":
 					{
-						"buffer_size": 959,
+						"buffer_size": 902,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								950,
-								950
+								853,
+								853
 							]
 						],
 						"settings":
@@ -142,18 +182,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/controllers/events_controller.rb",
+					"file": "app/controllers/application_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2773,
+						"buffer_size": 410,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								344,
+								344
 							]
 						],
 						"settings":
@@ -163,7 +203,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 204.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 2398,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1472,
+								1472
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 821.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/registrations/edit.html.erb",
+					"settings":
+					{
+						"buffer_size": 1675,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -177,7 +273,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -212,6 +308,102 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"appviewsregi",
+				"app/views/registrations/edit.html.erb"
+			],
+			[
+				"omin",
+				"app/controllers/users/omniauth_callbacks_controller.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"application_co",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"registrat",
+				"app/controllers/registrations_controller.rb"
+			],
+			[
+				"viewsorgan",
+				"app/views/organizations/index.html.erb"
+			],
+			[
+				"my_eventssh",
+				"app/views/my_events/show.html.erb"
+			],
+			[
+				"my_events",
+				"app/controllers/my_events_controller.rb"
+			],
+			[
+				"route",
+				"config/routes.rb"
+			],
+			[
+				"vol",
+				"app/controllers/volunteers_controller.rb"
+			],
+			[
+				"appviewsvolun",
+				"app/views/volunteers/show.html.erb"
+			],
+			[
+				"eventsindex",
+				"app/views/events/index.html.erb"
+			],
+			[
+				"viewseventsshow",
+				"app/views/events/show.html.erb"
+			],
+			[
+				"application.ht",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"viewseventssh",
+				"app/views/events/show.html.erb"
+			],
+			[
+				"eventsind",
+				"app/views/events/index.html.erb"
+			],
+			[
+				"viewseventsh",
+				"app/views/events/show.html.erb"
+			],
+			[
+				"rout",
+				"config/routes.rb"
+			],
+			[
+				"application_",
+				"app/controllers/application_controller.rb"
+			],
+			[
+				"viewsregi",
+				"app/views/registrations/new.html.erb"
+			],
+			[
+				"viewsregistra",
+				"app/views/registrations/edit.html.erb"
+			],
+			[
+				"users_",
+				"app/controllers/users_controller.rb"
+			],
+			[
+				"viewsorganization",
+				"app/views/organizations/index.html.erb"
+			],
+			[
+				"organizations",
+				"app/controllers/organizations_controller.rb"
+			],
 			[
 				"events_",
 				"app/controllers/events_controller.rb"
@@ -306,7 +498,7 @@
 		[
 			[
 				"",
-				"/home/jabo/data/tripping_octo_bear/tripping-octo-bear.sublime-project"
+				"/home/jabo/bengga/tripid/tripid.sublime-project"
 			],
 			[
 				"trippi",

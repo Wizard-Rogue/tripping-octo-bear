@@ -1,0 +1,11 @@
+<span><%= link_to 'Edit', edit_user_registration_path if @user == current_user %></span>
+<% unless @user.image.nil? %>
+<div class="span3">
+	<%= image_tag(@user.image, :border=>0) %>
+</div>
+<% end %>
+<div class="span3">
+  <h2 class="user_badge"><%= @user.name %></h2>
+  <p><%= @user.email %></p>
+  <p><%= @user.phone unless @user.phone.nil? %></p>
+</div>

@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
   stored_location_for(resource) ||
-    if session[:redirect]
+    if @s
+      session[:redirect] = true
     	new_organization_url
     else
       super

@@ -5,8 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
 	end
 	
 	def create
+		@user = User.new(params[:user])
 		if session["devise.twitter_data"]
-			@user = User.new(params[:user])
 			session["devise.twitter_data"].email = @user.email
 			if @user = User.where(:email => session["devise.twitter_data"].email).first
 				@user.update_attributes( :image => session["devise.twitter_data"].profile_image_url, :screen_name => session["devise.twitter_data"].screen_name)
@@ -17,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
 			flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "twitter"
 			sign_in_and_redirect @user, :event => :authentication
 		else
-			session[:redirect] = true
+			@s = @user.is_organization
 			super
 		end
 	end
