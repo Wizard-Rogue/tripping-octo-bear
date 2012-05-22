@@ -7,18 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-	<div id="container">
-			<p>
-			<% if current_user %>
-				<%= image_tag(current_user.image, :border=>0) if current_user.image? %> Welcome <%= current_user.name %>! Not you? <%= link_to 'Sign Out', destroy_user_session_path %>
-			<% else %>
-				<%= link_to image_tag('facebook_64.png', :border=>0), user_omniauth_authorize_path(:facebook) %>
-				<%= link_to image_tag('twitter_64.png', :border=>0), user_omniauth_authorize_path(:twitter) %>
-				 or <%= link_to('Sign In', new_user_session_path) %>
-			<% end %>
-		</p>
-	</div>
 <div id="main-container" class="container">
     <% flash.each do |key, message| %>
       <div class="alert">

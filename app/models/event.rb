@@ -6,7 +6,6 @@ class Event < ActiveRecord::Base
   after_validation :geocode
   validates :street, :city, :state, :description, :name, presence: true
 
-
   def joined?(user)
   	users.exists? user
   end
