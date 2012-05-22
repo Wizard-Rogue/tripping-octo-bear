@@ -20,58 +20,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/events/_form.html.erb",
-			"settings":
-			{
-				"buffer_size": 732,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/views/layouts/application.html.erb",
 			"settings":
 			{
-				"buffer_size": 3222,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/registrations/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 2330,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/registrations/edit.html.erb",
-			"settings":
-			{
-				"buffer_size": 1670,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/devise/sessions/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 701,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/events/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 2582,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/events/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 2164,
+				"buffer_size": 3934,
 				"line_ending": "Unix"
 			}
 		}
@@ -100,22 +52,24 @@
 	},
 	"file_history":
 	[
+		"/home/ac/data/tripping-octo-bear/app/views/events/_form.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/views/events/index.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/views/events/show.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/models/event.rb",
+		"/home/ac/data/tripping-octo-bear/config/initializers/time_format.rb",
+		"/home/ac/data/tripping-octo-bear/app/views/devise/sessions/new.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/models/user.rb",
+		"/home/ac/data/tripping-octo-bear/app/views/registrations/new.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/views/registrations/edit.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/controllers/users/omniauth_callbacks_controller.rb",
 		"/home/ac/data/tripping-octo-bear/app/views/home/index.html.erb",
 		"/home/ac/data/tripping-octo-bear/config/routes.rb",
-		"/home/ac/data/tripping-octo-bear/app/models/user.rb",
-		"/home/ac/data/tripping-octo-bear/app/views/events/show.html.erb",
-		"/home/ac/data/tripping-octo-bear/app/views/events/index.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/assets/javascripts/application.js",
 		"/home/ac/data/tripping-octo-bear/app/views/events/edit.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/events/new.html.erb",
-		"/home/ac/data/tripping-octo-bear/app/views/events/_form.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/assets/stylesheets/bootstrap_and_overrides.css.less",
 		"/home/ac/data/tripping-octo-bear/app/views/layouts/application.html.erb",
-		"/home/ac/data/tripping-octo-bear/app/models/event.rb",
-		"/home/ac/data/tripping-octo-bear/app/views/registrations/edit.html.erb",
 		"/home/ac/data/tripping-octo-bear/.gitignore",
-		"/home/ac/data/tripping-octo-bear/app/views/registrations/new.html.erb",
 		"/home/ac/data/tripping-octo-bear/db/schema.rb",
 		"/home/ac/data/tripping-octo-bear/app/views/devise/registrations/new.html.erb",
 		"/home/ac/data/tripping-octo-bear/Gemfile"
@@ -136,6 +90,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"unless"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -153,187 +108,23 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/events/_form.html.erb",
-					"settings":
-					{
-						"buffer_size": 732,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								88
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 3222,
+						"buffer_size": 3934,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1940,
-								1940
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 612.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/registrations/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 2330,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								40,
-								40
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/registrations/edit.html.erb",
-					"settings":
-					{
-						"buffer_size": 1670,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								981,
-								981
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/devise/sessions/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 701,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								588,
-								588
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/events/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 2582,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								680,
-								686
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/events/index.html.erb",
-					"settings":
-					{
-						"buffer_size": 2164,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1090,
-								1090
+								411,
+								411
 							]
 						],
 						"settings":
@@ -393,6 +184,14 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"even",
+				"app/models/event.rb"
+			],
+			[
 				"sho",
 				"app/views/events/show.html.erb"
 			],
@@ -415,10 +214,6 @@
 			[
 				"new",
 				"app/views/devise/sessions/new.html.erb"
-			],
-			[
-				"user",
-				"app/models/user.rb"
 			],
 			[
 				"ed",
@@ -455,10 +250,6 @@
 			[
 				"application",
 				"app/views/layouts/application.html.erb"
-			],
-			[
-				"even",
-				"app/models/event.rb"
 			],
 			[
 				"_for",
