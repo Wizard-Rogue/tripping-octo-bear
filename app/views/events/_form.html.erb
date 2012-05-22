@@ -6,8 +6,7 @@
   <%= f.input :description %>
   <%= f.input :street %>
   <%= f.input :city %>
-  <%= f.input :state %>
-  <%= f.input :country, :include_blank => false, :selected => "Philippines" %>
+  <%= f.input :state, :label => "Region/State" %>
   <%= f.input :start, :start_year => 2012, :input_html => { :class => "span1" }, :format => :long%>
   <%= f.input :end, :start_year => 2012, :input_html => { :class => "span1" } %>
   <p class="margin"> <%= f.file_field :photo %></p>
