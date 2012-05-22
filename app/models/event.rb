@@ -4,7 +4,9 @@ class Event < ActiveRecord::Base
   attr_accessible :address, :street, :city, :country, :description, :latitude, :longitude, :name, :user_id, :state
   geocoded_by :address
   after_validation :geocode
-  
+  validates :street, :city, :state, :description, :name, presence: true
+
+
   def joined?(user)
   	users.exists? user
   end

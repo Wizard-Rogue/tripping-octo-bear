@@ -5,6 +5,12 @@
   <%= @event.organization.name %>
 </p>
 
+<% unless @event.longitude.nil? || @event.latitude.nil? %>
+  <div style="float:right;">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+  </div>
+<% end %>
+
 <p>
   <b>Name:</b>
   <%= @event.name %>
@@ -16,39 +22,14 @@
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Location:</b>
   <%= @event.address %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @event.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @event.state %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%= @event.country %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @event.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%= @event.longitude %>
 </p>
 
 <p>
   <b>This event's participants:</b>
   <% @event.users.all.each do |u| %>
-  	<% if @event.organization.name = u.name %>
+  	<% unless @event.organization.name == u.name %>
       <% unless u.is_organization %>
       <li><%= u.name %></li>
       <% end %>
@@ -59,10 +40,9 @@
 <p>
   <b>This event's supporters:</b>
   <% @event.users.all.each do |u| %>
-    <% unless @event.organization.name = u.name %>
-    <% else %>
+    <% unless @event.organization.name == u.name %>
       <% if u.is_organization %>
-      <li><%= u.name %></li>
+        <li><%= u.name %></li>
       <% end %>
     <% end %>
   <% end %>
