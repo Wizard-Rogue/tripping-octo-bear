@@ -8,17 +8,6 @@
 </head>
 <body>
 
-	<div id="container">
-			<p>
-			<% if current_user %>
-				<%= image_tag(current_user.image, :border=>0) if current_user.image? %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
-			<% else %>
-				<%= link_to image_tag('facebook_64.png', :border=>0), user_omniauth_authorize_path(:facebook) %>
-				<%= link_to image_tag('twitter_64.png', :border=>0), user_omniauth_authorize_path(:twitter) %>
-				 or <%= link_to('Sign In', new_user_session_path) %>
-			<% end %>
-		</p>
-	</div>
 <div id="main-container" class="container">
     <% flash.each do |key, message| %>
       <div class="alert">
@@ -52,29 +41,36 @@
           </form>
 
           <ul class="nav pull-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Events <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Create New Event</a></li>
-                <li><a href="#">View Events</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="nav-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-            <li class="divider-vertical"></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Edit Profile</a></li>
-                <li><a href="#">Account Settings</a></li>
-                <li><a href="#">Help</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Logout</a></li>
-              </ul>
-            </li>
+            <% unless user_signed_in? %>
+              <li><%= link_to "Sign In", new_user_session_url %></li>
+            <% else %>
+              <% if current_user.is_organization %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Events <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to "Create New Event", new_event_url %></a></li>
+                    <li><a href="#">View My Events</li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">One more separated link</a></li>
+                  </ul>
+                </li>
+              <% else %>
+              <% end %>
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Edit Profile", edit_user_registration_url %>
+                  <li><a href="#">Account Settings</a></li>
+                  <li><a href="#">Help</a></li>
+                  <li class="divider"></li>
+                  <li><%= link_to "Logout", destroy_user_session_path %></li>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </div><!-- /.nav-collapse -->
       </div>
@@ -83,6 +79,7 @@
 </div>
 </header>
 
+<!-- should not appear in login, home, sign up & sign in-->
 <div class="container master-container">
   <ul class="breadcrumb">
     <%= yield :breadcrumb %>
@@ -90,7 +87,6 @@
 
   <%= yield %>
 </div>
+
 </body>
 </html>
-
-

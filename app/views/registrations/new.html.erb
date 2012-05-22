@@ -1,40 +1,55 @@
 <% if session["devise.twitter_data"] %>
 
-	<h2>Apologies!</h2>
-	<h3> Twitter does not provide us with an email address. Please be so kind as to provide yours below:</h3>
-
-	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
 		<%= devise_error_messages! %>
+			<div class="inputs">
+    			<%= f.input :email, :required => true, :autofocus => true %>
+			    <%= f.input :street %>
+			    <%= f.input :city %>
+			    <%= f.input :state, :label => "State/Region" %>
+			    <%= f.input :website1, :label => "Website" %>
+			    <%= f.input :contact_number, :label => "Mobile Number" %>
+			    <%= f.input :is_organization, :as => :radio, :label => "Account Type", :collection => [["Volunteer", false], ["Organization", true]] %>
+			    <p class="margin"> <%= f.file_field :photo %></p>
+			  </div>
 		
-		<div><%= f.label :email %><br />
-		<%= f.email_field :email %></div>
-
-		<div><%= f.submit "Sign up" %></div>
-	<% end %>
-	
-<% else %>
-
-	<h2>Sign up</h2>
-
-	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-		<%= devise_error_messages! %>
-
-		<div><%= f.label :name %><br />
-		<%= f.text_field :name %></div>
-	
-		<div><%= f.label :email %><br />
-		<%= f.email_field :email %></div>
-
-		<div><%= f.label :password %><br />
-		<%= f.password_field :password %></div>
-
-		<div><%= f.label :password_confirmation %><br />
-		<%= f.password_field :password_confirmation %></div>
-		
-		<div><%= f.check_box :is_organization %> <%= f.label :is_organization %></div>
-
-		<div><%= f.submit "Sign up" %></div>
-	<% end %>
+	<div class="actions">
+		<%= f.button :submit, "Create Account" %>
+  	</div>
 <% end %>
 
-<%= render "links" %>
+<% else %>
+
+<h2>Sign up</h2>
+
+	<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal'}) do |f| %>
+		<%= devise_error_messages! %>
+
+		<div class="inputs">
+    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+    <%= f.input :is_organization, :as => :radio, :label => "Account Type", :collection => [["Volunteer", false], ["Organization", true]] %>
+      <%= f.input :street %>
+      <%= f.input :city %>
+      <%= f.input :state, :label => "State/Region" %>
+      <%= f.input :website1, :label => "Website" %>
+      <%= f.input :contact_number, :label => "Mobile Number" %>
+      <p class="margin"> <%= f.file_field :photo %></p>
+  </div>
+	<div id="container">
+			<p class="margin">
+			<% if current_user %>
+				<%= image_tag(current_user.image, :border=>0) if current_user.image? %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
+			<% else %>
+				<%= link_to image_tag('facebook_32.png', :border=>0), user_omniauth_authorize_path(:facebook) %>
+				<%= link_to image_tag('twitter_32.png', :border=>0), user_omniauth_authorize_path(:twitter) %>
+				 or <%= link_to('Sign In', new_user_session_path) %>
+			<% end %>
+		</p>
+	</div>
+<div class="actions">
+<%= f.button :submit, "Sign up" %>
+  </div>
+	<% end %>
+<% end %>
