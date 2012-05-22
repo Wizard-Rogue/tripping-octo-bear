@@ -8,6 +8,7 @@ TrippingOctoBear::Application.routes.draw do
   devise_scope :user do
   get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   match '/registrations/new_organization' => 'registrations#edit', :as => :new_organization
+  match '/users/sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
 	end
   # The priority is based upon order of creation:
   # first created -> highest priority.
