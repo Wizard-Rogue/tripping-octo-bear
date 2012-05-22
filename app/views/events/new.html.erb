@@ -1,3 +1,7 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home"%> <span class="divider">/</span></li>  <li><%= link_to "Events", events_path %><span class="divider">/</span></li>  <li class="active">Create New Event</li>
+<% end %>
+
 <%- model_class = @event.class -%>
 <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
                                :default => "New #{model_class.model_name.human}") %></h1>

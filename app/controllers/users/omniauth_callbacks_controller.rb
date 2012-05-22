@@ -12,6 +12,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       session["devise.twitter_data"] = request.env["omniauth.auth"]["extra"]["raw_info"]
       session["devise.twitter_data"].website = request.env["omniauth.auth"]["info"]["urls"]["Twitter"]
+      flash[:notice] = "Fill up the form to finish registration."
       redirect_to new_user_registration_url
     end
   end
