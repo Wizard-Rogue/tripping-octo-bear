@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<div id="container">
 			<p>
 			<% if current_user %>
@@ -27,5 +28,87 @@
     <% end %>
     <%= yield %>
   </div>
+
+<header>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Project name</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><%= link_to "Events", events_path %></li>
+            <li><a href="#">Organizations</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+
+          <form class="navbar-search pull-left" action="">
+            <input type="text" class="search-query" placeholder="Search">
+          </form>
+
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Events <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Create New Event</a></li>
+                <li><a href="#">View Events</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="nav-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+            <li class="divider-vertical"></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">User <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Edit Profile</a></li>
+                <li><a href="#">Account Settings</a></li>
+                <li><a href="#">Help</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+  </div>
+</div>
+</header>
+
+<div class="container master-container">
+  <ul class="breadcrumb">
+    <%= yield :breadcrumb %>
+  </ul>
+
+  <%= yield %>
+</div>
+
+  <div id="container">
+    <div>
+    <p>
+      <% if current_user %>
+        <%= image_tag(current_user.image, :border=>0) %> Welcome <%= current_user.name %>! Not you? <%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %>
+      <% else %>
+        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> or <%= link_to('Sign In', new_user_session_path, :method => :new) %>
+      <% end %>
+    </p>
+    </div>
+  </div>
+
+  
+
+
+>>>>>>> forms2
 </body>
 </html>
+
+

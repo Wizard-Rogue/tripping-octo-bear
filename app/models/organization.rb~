@@ -1,4 +1,0 @@
-class Organization < User
-
-  has_many :events
-end

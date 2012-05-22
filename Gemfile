@@ -13,7 +13,7 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
 
@@ -29,7 +29,10 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-identity'
 gem 'jquery-rails'
-
+gem 'simple_form'
+gem 'therubyracer'
+gem 'paperclip', :git =>"git://github.com/thoughtbot/paperclip.git"
+gem 'country_select'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
