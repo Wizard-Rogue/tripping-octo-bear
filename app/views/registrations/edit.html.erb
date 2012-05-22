@@ -18,6 +18,7 @@
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
 
   <div><h2>Other Information</h2>
+      <%= f.input :name %>
       <%= f.input :description if current_user.is_organization %>
       <%= f.input :street %>
       <%= f.input :city %>
