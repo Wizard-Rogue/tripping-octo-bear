@@ -27,12 +27,12 @@ class User < ActiveRecord::Base
       user.update_attributes( :website2 => data.link ) unless user.website1 == data.link
       user
     else # create a user with a stub password
-      User.create!(:email => data.email, :password => Devise.friendly_token[0, 20], :name => data.name, :image => access_token["info"]["image"], :website1 => data.link, :is_organization => false)
+      User.create!(:email => data.email, :password => Devise.friendly_token[0, 20], :name => data.name, :image => access_token["info"]["image"], :website1 => data.link, :is_organization => false, :country => "Philippines")
     end
   end
 
 	def self.create_with_twitter(access_token, signed_in_resource=nil)
-    self.create!( :screen_name => access_token.screen_name, :email => access_token.email, :password => Devise.friendly_token[0, 20], :name => access_token.name, :image => access_token.profile_image_url, :website1 => access_token.website, :is_organization => false )
+    self.create!( :screen_name => access_token.screen_name, :email => access_token.email, :password => Devise.friendly_token[0, 20], :name => access_token.name, :image => access_token.profile_image_url, :website1 => access_token.website, :is_organization => false, :country => "Philippines")
   end
 
   def self.new_with_session(params, session)
