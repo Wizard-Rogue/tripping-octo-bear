@@ -1,0 +1,46 @@
+<div>
+	<div id="profile_pic_container"> <!-- container for picture -->
+		<%= image_tag @user.photo (:medium) %>
+	</div>
+	<div> <!-- container for profile information-->
+		<h1><%= current_user.name %></h1>
+		<div id="profile_info_container"> <!-- user info -->
+			<ul>
+				<% if current_user.is_organization %>
+					<li>
+						<label>About the Org: </label>
+						<p><%= current_user.description %></p>
+					</li>
+				<% else %>
+				<% end %>
+				<li>
+					<label>Address: </label>
+					<p><%= current_user.address %></p>
+				</li>
+				<li>
+					<label>Phone Number: </label>
+					<p><%= current_user.phone %></p>
+				</li>
+				<li>
+					<label>Mobile Number: </label>
+					<p><%= current_user.address %></p>
+				</li>
+				<% if current_user.is_organization %>
+					<li>
+						<label>Official Website: </label>
+						<p><%= current_user.website1 %></p>
+					</li>
+					<li>
+						<label>Other Website: </label>
+						<p><%= current_user.website2 %></p>
+					</li>
+				<% else %>
+					<li>
+						<label>Website: </label>
+						<p><%= current_user.website1 %></p>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
