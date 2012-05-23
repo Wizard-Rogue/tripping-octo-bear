@@ -52,7 +52,7 @@
 </p>
 <p>
   <strong><%= model_class.human_attribute_name(:start) %>:</strong><br>
-  <%= @event.start%>
+  <%= @event.start.to_formatted_s(:long)%>
 </p>
 <p>
   <strong><%= model_class.human_attribute_name(:end) %>:</strong><br>
