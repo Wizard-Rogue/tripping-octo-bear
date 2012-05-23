@@ -32,14 +32,9 @@
             <li class="active"><a href="#">Home</a></li>
             <li><%= link_to "Events", events_path %></li>
             <li><a href="#">Organizations</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">FAQ</a></li>
           </ul>
 
-          <form class="navbar-search pull-left" action="">
-            <input type="text" class="search-query" placeholder="Search">
-          </form>
-
+          
           <ul class="nav pull-right">
             <% unless user_signed_in? %>
               <li><%= link_to "Sign In", new_user_session_url %></li>
@@ -49,13 +44,8 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Events <b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><%= link_to "Create New Event", new_event_url %></a></li>
-                    <li><a href="#">View My Events</li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="nav-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
+                    <li><a href="#">View My Events</a></li>
+                   </ul>
                 </li>
               <% else %>
               <li><a href="#">My Events<a></li> <!-- will show user's joined events. pweds din ung bookmarked & history/viewed peo wag muna...-->
