@@ -1,0 +1,6 @@
+<h1>Organizations</h1>
+<% @users.each do |user| %>
+	<% if user.is_organization %>
+		<li><%= link_to user.name, profile_url(user.id) %></li>
+	<% end %>
+<% end %>

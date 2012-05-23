@@ -28,7 +28,7 @@
         <a class="brand" href="#">Project name</a>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><%= link_to "Home", home_index_path %></li>
+            <li><%= link_to "Home", home_index %></li>
             <li><%= link_to "Events", events_path %></li>
             <li><%= link_to "Organizations", organizations_path %></li>
           </ul>

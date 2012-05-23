@@ -1,0 +1,55 @@
+<div>
+	<div id="profile_pic_container"> <!-- container for picture -->
+		
+		<% if @user.image.blank? && @user.photo.blank? %>
+			<%= image_tag 'user_128.png' %>
+		<% else %>
+			<% if @user.photo.blank? %>
+				<%= image_tag @user.image %>
+			<% else %>
+				<%= image_tag @user.photo (:medium) %>
+			<% end %>
+		<% end %>
+	</div>
+	<div> <!-- container for profile information-->
+		<h1><%= @user.name %></h1>
+		<div id="profile_info_container"> <!-- user info -->
+			<ul>
+				<% if @user.is_organization %>
+					<li>
+						<label>About the Org: </label>
+						<p><%= @user.description %></p>
+					</li>
+				<% else %>
+				<% end %>
+				<li>
+					<label>Address: </label>
+					<p><%= @user.address %></p>
+				</li>
+				<li>
+					<label>Phone Number: </label>
+					<p><%= @user.phone %></p>
+				</li>
+				<li>
+					<label>Mobile Number: </label>
+					<p><%= @user.contact_number %></p>
+				</li>
+				<% if @user.is_organization %>
+					<li>
+						<label>Official Website: </label>
+						<p><%= @user.website1 %></p>
+					</li>
+					<li>
+						<label>Other Website: </label>
+						<p><%= @user.website2 %></p>
+					</li>
+				<% else %>
+					<li>
+						<label>Website: </label>
+						<p><%= @user.website1 %></p>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

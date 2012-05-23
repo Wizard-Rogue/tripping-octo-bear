@@ -11,8 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20120522092342) do
+=======
 ActiveRecord::Schema.define(:version => 20120523101623) do
+>>>>>>> fc21c3ba82ab32bd72e46cd658341e7cef4d73c5
 
   create_table "events", :force => true do |t|
     t.integer  "user_id"
