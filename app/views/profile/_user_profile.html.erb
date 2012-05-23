@@ -1,11 +1,46 @@
-<span><%= link_to 'Edit', edit_user_registration_path if @user == current_user %></span>
-<% unless @user.image.nil? %>
-<div class="span3">
-	<%= image_tag(@user.image, :border=>0) %>
-</div>
-<% end %>
-<div class="span3">
-  <h2 class="user_badge"><%= @user.name %></h2>
-  <p><%= @user.email %></p>
-  <p><%= @user.phone unless @user.phone.nil? %></p>
+<div>
+	<div id="profile_pic_container"> <!-- container for picture -->
+		<%= image_tag @user.photo (:medium) %>
+	</div>
+	<div> <!-- container for profile information-->
+		<h1><%= @user.name %></h1>
+		<div id="profile_info_container"> <!-- user info -->
+			<ul>
+				<% if @user.is_organization %>
+					<li>
+						<label>About the Org: </label>
+						<p><%= @user.description %></p>
+					</li>
+				<% else %>
+				<% end %>
+				<li>
+					<label>Address: </label>
+					<p><%= @user.address %></p>
+				</li>
+				<li>
+					<label>Phone Number: </label>
+					<p><%= @user.phone %></p>
+				</li>
+				<li>
+					<label>Mobile Number: </label>
+					<p><%= @user.address %></p>
+				</li>
+				<% if @user.is_organization %>
+					<li>
+						<label>Official Website: </label>
+						<p><%= @user.website1 %></p>
+					</li>
+					<li>
+						<label>Other Website: </label>
+						<p><%= @user.website2 %></p>
+					</li>
+				<% else %>
+					<li>
+						<label>Website: </label>
+						<p><%= @user.website1 %></p>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
 </div>
