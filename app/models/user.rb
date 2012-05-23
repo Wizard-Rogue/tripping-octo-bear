@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
   :address, :street, :city, :state, :country, :image, :phone, :website1, 
   :website2, :contact_number, :name, :screen_name, :latitude, :longitude, 
-  :description, :is_organization
+  :description, :is_organization, :photo
   
-  # attr_accessible :title, :body
+   has_attached_file :photo
   
   # Validations
 #  validates :email, presence: true
