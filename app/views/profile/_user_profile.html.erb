@@ -1,6 +1,15 @@
 <div>
 	<div id="profile_pic_container"> <!-- container for picture -->
-		<%= image_tag @user.photo (:medium) %>
+		
+		<% if @user.image.blank? && @user.photo.blank? %>
+			<%= image_tag 'user_128.png' %>
+		<% else %>
+			<% if @user.photo.blank? %>
+				<%= image_tag @user.image %>
+			<% else %>
+				<%= image_tag @user.photo (:medium) %>
+			<% end %>
+		<% end %>
 	</div>
 	<div> <!-- container for profile information-->
 		<h1><%= @user.name %></h1>
@@ -23,7 +32,7 @@
 				</li>
 				<li>
 					<label>Mobile Number: </label>
-					<p><%= @user.address %></p>
+					<p><%= @user.contact_number %></p>
 				</li>
 				<% if @user.is_organization %>
 					<li>

@@ -12,9 +12,8 @@ class User < ActiveRecord::Base
   :website2, :contact_number, :name, :screen_name, :latitude, :longitude, 
   :description, :is_organization, :photo
   
-  has_attached_file :photo  
   # attr_accessible :title, :body
-  
+  has_attached_file :photo, :styles => {:small => "150x150!", :medium => "250x250!", :large => "300x300", :thumbnail => "100x100"}
   # Validations
 #  validates :email, presence: true
 #  validates :email, uniqueness: true
