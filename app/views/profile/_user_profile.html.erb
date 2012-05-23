@@ -11,9 +11,10 @@
 			<% end %>
 		<% end %>
 	</div>
-	<div> <!-- container for profile information-->
+	<div id="profile_info"> <!-- container for profile information-->
 		<h1><%= @user.name %></h1>
-		<div id="profile_info_container"> <!-- user info -->
+		<div id="profile_info_container">
+		</br> <!-- user info -->
 			<ul>
 				<% if @user.is_organization %>
 					<li>

@@ -8,17 +8,15 @@
     <% @events.each do |event| %>
         <div class="box" href="#"> <!--link-to-event-page-->
           <div>
+            <% if event.photo.nil? == true%>
+              <%= image_tag ("events.png") %>
+            <% else %>
             <%= image_tag event.photo(:small) %>
+            <%end%>
               <h1 class="link"><%= link_to event.name, event_path(event)%></h1>
               <p><label>by</label><%= event.organization.name %></p> <!--Link_to organization profile-->
               <p class="event_desc"><%= event.description %></p>
               <br/>
-              <div class="box-details">
-              <label>Location: </label><p><%= event.address %></p>
-              <br/>
-              <p><label>Start: </label><%= event.start %></p>
-              <p><label>End: </label><%= event.end %></p>
-              </div>
           </div>
         </div>
     <% end %>

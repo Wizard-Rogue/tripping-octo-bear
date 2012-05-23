@@ -14,9 +14,13 @@
 
 p.margin
 {
-margin-left: 140px;
+margin-left: 80px;
 }
 
+p.pic
+{
+margin-left: 70px;
+}
 #content
 {
 background-color: #f0f0f0;
@@ -50,9 +54,9 @@ background-color: #f0f0f0;
 
 #events_container .box:hover {
 	border-color: #aaa;
-	background: #8fe8fc;
-	transition: all 1s linear;
-	-moz-transition: all 1s linear;
+	background: #D0F3FA;
+	transition: all 0.3s linear;
+	-moz-transition: all 0.3s linear;
 }
 
 #events_container .box h1 {
@@ -91,7 +95,45 @@ background-color: #f0f0f0;
 }
 
 #events_container .box-details label {
-	font-weight: bold; margin-right: 3px;
+	font-weight: bold; 
+	margin-right: 3px;
+}
+
+#event_container{
+	padding: 8px 0px 0px 0px;
+	margin-left:50px;
+	margin-right: 100px;
+}
+
+#event_container legend{
+	font-weight:bold;
+	font-size: 35px;
+    line-height: 36px;
+    text-rendering: optimizelegibility;
+}
+
+#event_container .event_info{
+	width: 500px;
+}
+#event_container .pic_container{
+	padding: 0px 25px;
+	max-width: 400px;
+	min-height: 250px;
+	min-width:250px;
+	max-height: 850px;
+}
+
+#event_container .event_venue{
+	max-width: 400px;
+	min-height: 250px;
+	min-width:250px;
+	max-height: 850px;
+	margin-left: 44px;
+	padding: 5px 0px 10px 0px;
+}
+
+#event_container p{
+	font-size: 15px;
 }
 
 div.bottom_container {
@@ -109,10 +151,77 @@ div.bottom_container {
  }
 
 #profile_pic_container{
+	padding: 8px 10px 0px 15px;
+	max-width: 250px;
 	float: left;
 }
 
+#profile_info{
+	float: right;
+	padding: 100px 15px 0px 0px;
+	max-width: 650px;
+}
+
+#profile_info h1{
+	margin-left: 25px;
+}
 #profile_info_container{
-	float: left;
 	border-top: 1px solid #141313;
+}
+
+#profile_info_container label{
+	font-weight: bold;
+	font-size: 15px !important;
+}
+
+#profile_info_container p{
+	margin-left: 10px;
+	padding: 10px 0px;
+	text-align: justify;
+}
+
+#profile_info_container li{
+	overflow: auto;
+}
+
+#sign_in_container{
+	border-right: 2px solid #777 !important;
+	width: 459px !important;
+	height: 240px ;
+	padding: 30px 5px;
+	float: left;
+}
+
+#sign_up_container{
+	width: 449px !important;
+	height: 240px ;
+	padding: 30px 5px;
+	float: right;
+	text-align: center;
+}
+
+#cont{
+   color: #313131;
+    margin-top: 1em;
+}
+
+#cont .center{
+	text-align: center;
+}
+span.line_thru {
+	color: #B1B1B1 !important;
+    text-decoration: line-through !important;
+}
+span.or {
+	color: #6D6B6B;
+	font-weight: bold !important;
+	font-size: 14px;
+}
+
+div.btns {
+	padding: 15px !important;
+	text-align: center;
+}
+div.center{
+	text-align: center;
 }

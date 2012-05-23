@@ -1,19 +1,6 @@
 <% content_for :header do %>
   <h1>Your events:</h1>
 <% end %>
-<div class="row">
-	<div id="supported-events" class="span6">
-		<p>
-			<strong>Events you support:</strong>
-			<% Event.all.each do |u| %>
-				<% unless u.users.where(:id => current_user.id).first.nil? %>
-					<li>
-						<%= link_to u.name, event_path(u) %> headed by <%= link_to u.organization.name, profile_url(u.organization.id) %>
-					</li>
-				<% end %>
-			<% end %>
-		</p>
-	</div>
 </div>
 <div class="row">
 	<div id="created-events" class="span6">
@@ -34,3 +21,16 @@
 		</p>
 	</div>
 </div>
+<div class="row">
+	<div id="supported-events" class="span6">
+		<p>
+			<strong>Events you support:</strong>
+			<% Event.all.each do |u| %>
+				<% unless u.users.where(:id => current_user.id).first.nil? %>
+					<li>
+						<%= link_to u.name, event_path(u) %> headed by <%= link_to u.organization.name, profile_url(u.organization.id) %>
+					</li>
+				<% end %>
+			<% end %>
+		</p>
+	</div>

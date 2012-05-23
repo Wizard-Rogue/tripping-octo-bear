@@ -3,10 +3,10 @@
 <%= simple_form_for @event, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
 
   <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :street %>
-  <%= f.input :city %>
-  <%= f.input :state, :label => "State/Region" %>
+  <%= f.input :description, :input_html => {:class => "span6"}%>
+  <%= f.input :street, :input_html => {:class => "span5"} %>
+  <%= f.input :city , :input_html => {:class => "span3"}%>
+  <%= f.input :state, :label => "Region", :collection => regions, :include_blank => false %>
   <%= f.input :start, :start_year => 2012, :input_html => { :class => "span1" }, :format => :long%>
   <%= f.input :end, :start_year => 2012, :input_html => { :class => "span1" } %>
   <p class="margin"> <%= f.file_field :photo %></p>

@@ -6,35 +6,51 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
   <%= devise_error_messages! %>
-  <div class="inputs">
-  <% if session[:redirect] %>
-  <% else %>
-    <%= f.input :email, :required => true, :autofocus => true %>
-    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
-    <%= f.input :password_confirmation, :required => false %>
-  <% end %>
-
+</br>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-</div>
-  <div><h2>Other Information</h2>
+</br>
+  <div>
+    <legend>Account Information</legend>
       <%= f.input :name %>
-      <%= f.input :description if current_user.is_organization %>
-      <%= f.input :street %>
-      <%= f.input :city %>
-      <%= f.input :state, :label => "State/Region" %>
+      <%= f.input :description, :input_html => {:class => "span6"} if current_user.is_organization %>
+      <%= f.input :street, :input_html => {:class => "span5"} %>
+      <%= f.input :city , :input_html => {:class => "span3"}%>
+      <%= f.input :state, :label => "Region", :collection => regions, :include_blank => false %>
       <%= f.input :website1, :label => "Website" %>
       <%= f.input :website2, :label => "Other Website" if current_user.is_organization %>
       <%= f.input :phone, :label => "Phone Number" %>
       <%= f.input :contact_number, :label => "Mobile Number" %>
       <p class="margin"> <%= f.file_field :photo %></p>
+    </br>
   </div>
-  <div class="actions">
-    <%= f.button :submit, "Update Profile" %>
+  
+
+<div>
+  <legend>Change Password</legend>
+  <div class="inputs">
+  <% if session[:redirect] %>
+  <% else %>
+    <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
+    <%= f.input :password_confirmation, :required => false %>
+  <% end %>
+</div>
+
+</br>
+<div>
+  <legend>Account Deletion</legend>
+  <div class="inputs">
+    <h3>Unhappy with our services?</h3>
+  </br>
+    <%= link_to "Delete Account", registration_path(resource_name), :class => 'btn btn-danger', :confirm => "Are you sure?", :method => :delete %>
+</div>
+
+
+</br>
+</br>
+<div class="form-actions">
+    <%= f.button :submit, "Update Profile", :class => 'btn btn-info' %>
+    
+    <%= link_to "Back", :back, :class => 'btn' %>
   </div>
+</div>
 <% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
-
-<%= link_to "Back", :back %>
