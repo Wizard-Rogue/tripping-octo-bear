@@ -142,12 +142,14 @@ div.bottom_container {
     border: 1px solid #777;
     width: 32% !important;
     margin-left: 10px;
+    height: 170px;
   }
 
  div.bottom_container h1 {
  	color: white;
  	text-transform: uppercase;
  	margin: 5px 0;
+ 	font-size: 20px;
  }
 
 #profile_pic_container{
