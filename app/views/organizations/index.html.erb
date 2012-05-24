@@ -1,9 +1,16 @@
 <% content_for :breadcrumb do %>
   <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li>  <li><%= link_to "Organizations", organizations_path %></li>
 <% end %>
-<h1>Organizations</h1>
-<% @users.each do |user| %>
-	<% if user.is_organization %>
-		<li><%= link_to user.name, profile_url(user.id) %></li>
+
+
+<div id="supporter-list">
+	<% @users.each do |user| %>
+		<% if user.is_organization %>
+			<div id="org_list">
+				<div class="pic_container"><%= image_tag user.photo(:small) %></div>
+				<div class="org_info"><h3><%= link_to user.name, profile_url(user.id) %></h3>
+				<p><%= truncate(user.description, length: 350) %></p></div>
+			</div>
+		<% end %>
 	<% end %>
-<% end %>
+</div>

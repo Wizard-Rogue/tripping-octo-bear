@@ -1,13 +1,4 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li> <li class="active"><%= current_user.name %></li>
+<% end %>
 <%= render 'profile/user_profile' %>
-<div class="row">
-	<div id="supported-events" class="span6">
-		<p>
-			<strong><%= @user.name %>'s volunteered events:</strong>
-			<% Event.all.each do |u| %>
-				<% unless u.users.where(:id => @user.id).first.nil? %>
-					<li><%= link_to u.name, event_path(u) %></li>
-				<% end %>
-			<% end %>
-		</p>
-	</div>
-</div>

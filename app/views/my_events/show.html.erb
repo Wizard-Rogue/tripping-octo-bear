@@ -1,36 +1,31 @@
-<% content_for :header do %>
-  <h1>Your events:</h1>
+
+<!--CREATED EVENTS -->
+<strong>Events you created:</strong>
+<% current_user.events.all.each do |u| %>
+	<div id="event_list">
+		<div class="pic_container"><%= image_tag u.photo(:small) %></div>
+		<div class="event_info"><h3><%= link_to u.name, event_path(u) %></h3>
+			<p><%= truncate(u.description, length: 350) %></p></div>
+			<div class="btn_container">
+				<%= link_to t('.edit', :default => t("helpers.links.edit")), edit_event_path(u), :class => 'btn' if can? :update, u %>
+				<%= link_to t('.destroy', :default => t("helpers.links.destroy")), event_path(u), :method => 'delete',
+				:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+				:class => 'btn btn-danger' if can? :destroy, u %>
+			</div>
+	</div>
 <% end %>
-</div>
-<div class="row">
-	<div id="created-events" class="span6">
-		<p>
-			<strong>Events you created:</strong>
-			<% current_user.events.all.each do |u| %>
-				<li>
-					<%= link_to u.name, event_path(u) %>
-					<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_event_path(u), :class => 'btn' if can? :update, u %>
-  					<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              event_path(u),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-              :class => 'btn btn-danger' if can? :destroy, u %>
-				</li>
-			<% end %>
-		</p>
-	</div>
-</div>
-<div class="row">
-	<div id="supported-events" class="span6">
-		<p>
-			<strong>Events you support:</strong>
-			<% Event.all.each do |u| %>
-				<% unless u.users.where(:id => current_user.id).first.nil? %>
-					<li>
-						<%= link_to u.name, event_path(u) %> headed by <%= link_to u.organization.name, profile_url(u.organization.id) %>
-					</li>
-				<% end %>
-			<% end %>
-		</p>
-	</div>
+
+</br>
+</br>
+<strong>Events you support:</strong>
+<% Event.all.each do |u| %>
+		<% unless u.users.where(:id => current_user.id).first.nil? %>
+		<div id="event_list">
+			<div class="pic_container"><%= image_tag u.photo(:small) %></div>
+			<div class="event_info"><h3><%= link_to u.name, event_path(u) %></h3>
+				<p><%= truncate(u.description, length: 350) %></p>
+				<p>by <%= link_to u.organization.name, profile_url(u.organization.id) %></p>
+			</div>
+		</div>
+	<% end %>
+<% end %>

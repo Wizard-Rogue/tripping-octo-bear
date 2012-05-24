@@ -15,10 +15,11 @@
   <div class="pic_container"><%= image_tag @event.photo %></div>
   </br>
 <div class="event_info">
-  <p>
+  <p class="justify">
   <!--  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>-->
     <%= @event.description %>
   </p>
+</br>
   <div class="cont">
     <div class="center">
       <span class="line_thru">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -44,9 +45,8 @@
       <span class="or">&nbsp; Event Supporters &nbsp;</span>
       <span class="line_thru">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
     </div>
-  </br>
   </div>
-<p>
+<div id="supporter-list">
   <% @event.users.all.each do |u| %>
     <% unless @event.organization.name == u.name %>
       <% if u.is_organization %>
@@ -54,7 +54,7 @@
       <% end %>
     <% end %>
   <% end %>
-</p>
+</div>
 </div>
 </div>
 </br>

@@ -225,3 +225,72 @@ div.btns {
 div.center{
 	text-align: center;
 }
+
+#org_list{
+	border-bottom: 1px dotted #7777DD;
+    margin-top: 1em;
+    min-height: 140px;
+    overflow: auto;
+}
+
+#org_list .pic_container{
+	width: 120px;
+	height: 120px;
+	float: left;
+	padding: 0px 15px;
+}
+
+#org_list .org_info{
+	padding: 15px 20px 0px 0px;
+}
+
+#org_list .org_info h3 {
+    font-size: 150%;
+    margin-bottom: 2px;
+    margin-left: 100px;
+    margin-top: 0;
+}
+
+/*#org_list .btn_container{
+	margin-left: 10px;
+}*/
+
+p.justify{
+	text-align: justify;
+}
+
+#event_list{
+	border-bottom: 1px dotted #7777DD;
+    margin-top: 1em;
+    min-height: 140px;
+    overflow: auto;
+    padding: 0px 0px 0px 15px;
+}
+
+#event_list .pic_container{
+	width: 120px;
+	height: 120px;
+	float: left;
+	padding: 0px 15px;
+}
+
+#event_list .event_info{
+	padding: 0px 20px 0px 0px;
+	text-align: justify;
+	margin-right: 30px;
+}
+
+#event_list .event_info h3 {
+    font-size: 150%;
+    margin-bottom: 2px;
+    margin-left: 100px;
+    margin-top: 0;
+}
+
+#event_list .btn_container{
+	margin-left: 10px;
+}
+
+#supporter-list{
+	padding: 10px 25px;
+}
