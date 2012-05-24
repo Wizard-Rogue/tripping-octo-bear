@@ -4,7 +4,7 @@
 		<% if @user.image.blank? && @user.photo.blank? %>
 			<%= image_tag 'user_128.png' %>
 		<% else %>
-			<% if @user.photo.blank? %>
+			<% unless @user.photo.blank? %>
 				<%= image_tag @user.image %>
 			<% else %>
 				<%= image_tag @user.photo (:medium) %>

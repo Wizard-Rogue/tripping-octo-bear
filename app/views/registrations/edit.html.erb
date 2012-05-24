@@ -1,7 +1,11 @@
-<% if current_user.is_organization %>
+<% if session[:redirect] %>
   <h2> Please fill up the form below to be registered as a validated organization:</h2>
 <% else %>
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <% if current_user.is_organization %>
+    <h2>Edit Organization Information</h2>
+  <% else %>
+  <h2>Edit <%= resource_name.to_s.humanize %> Information</h2>
+  <% end %>
 <% end %>
 
 <% content_for :breadcrumb do %>
@@ -30,14 +34,14 @@
   
 
 <div>
-  <legend>Change Password</legend>
-  <div class="inputs">
   <% if session[:redirect] %>
   <% else %>
+  <legend>Change Password</legend>
+  <div class="inputs">
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
-  <% end %>
 </div>
+  <% end %>
 
 </br>
 <div>
