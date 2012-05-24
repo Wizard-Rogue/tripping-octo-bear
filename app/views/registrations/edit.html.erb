@@ -4,6 +4,10 @@
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
 <% end %>
 
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li>  <li><%= link_to current_user.name, my_profile_path %> <span class="divider">/</span> </li> <li class="active">Edit Profile</li>
+<% end %>
+
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
   <%= devise_error_messages! %>
 </br>

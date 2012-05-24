@@ -1,3 +1,6 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li>  <li><%= link_to "Organizations", organizations_path %></li>
+<% end %>
 <h1>Organizations</h1>
 <% @users.each do |user| %>
 	<% if user.is_organization %>

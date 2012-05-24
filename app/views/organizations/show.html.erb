@@ -1,16 +1,12 @@
 <% content_for :header do %>
   <h1>Organization Profile</h1>
 <% end %>
-<div class="row">
-  <div id="user-profile" class="span6">
-  	<span> <!--This is the link that adds an event. Change label from new to Organize an Event-->
-  		<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_event_path,
-            :class => 'btn btn-primary' if can? :create, Event %>
-  	</span>
+
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li>  <li><%= link_to "Organizations", organizations_path %> <span class="divider">/</span> </li>
+  <li class="active"><%= @user.name %></li>
+<% end %>
     <%= render 'profile/user_profile' %>
-  </div>
-</div>
 <div class="row">
 	<div id="supported-events" class="span6">
 		<p>

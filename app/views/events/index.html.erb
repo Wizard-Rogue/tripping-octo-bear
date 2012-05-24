@@ -1,5 +1,5 @@
 <% content_for :breadcrumb do %>
-  <li><%= link_to "Home"%> <span class="divider">/</span></li>  <li><%= link_to "Events", events_path %></li>
+  <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li>  <li><%= link_to "Events", events_path %></li>
 <% end %>
 
 <%- model_class = Event.new.class -%>
@@ -15,7 +15,7 @@
             <%end%>
               <h1 class="link"><%= link_to event.name, event_path(event)%></h1>
               <p><label>by</label><%= event.organization.name %></p> <!--Link_to organization profile-->
-              <p class="event_desc"><%= event.description %></p>
+              <p class="event_desc"><%= truncate(event.description, length: 150 )%> <%= link_to " Read More", event_path(event)%></p>
               <br/>
           </div>
         </div>
