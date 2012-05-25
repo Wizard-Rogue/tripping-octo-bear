@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding	padding: V H"
+			],
+			[
 				"margin",
 				"margin-right"
 			],
@@ -34,10 +38,6 @@
 			[
 				"event",
 				"event_container"
-			],
-			[
-				"pad",
-				"padding	padding: T R B L"
 			],
 			[
 				"paddi",
@@ -99,7 +99,7 @@
 			"file": "app/views/my_events/show.html.erb",
 			"settings":
 			{
-				"buffer_size": 1252,
+				"buffer_size": 1651,
 				"line_ending": "Unix"
 			}
 		},
@@ -107,7 +107,7 @@
 			"file": "app/assets/stylesheets/application.css",
 			"settings":
 			{
-				"buffer_size": 4859,
+				"buffer_size": 5143,
 				"line_ending": "Unix"
 			}
 		},
@@ -120,18 +120,42 @@
 			}
 		},
 		{
-			"file": "app/views/profile/_user_profile.html.erb",
+			"file": "app/views/events/new.html.erb",
 			"settings":
 			{
-				"buffer_size": 1289,
+				"buffer_size": 503,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/registrations/edit.html.erb",
+			"file": "app/views/layouts/application.html.erb",
 			"settings":
 			{
-				"buffer_size": 2308,
+				"buffer_size": 2910,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/events/edit.html.erb",
+			"settings":
+			{
+				"buffer_size": 582,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/stuff.css",
+			"settings":
+			{
+				"buffer_size": 84501,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/profile/_user_profile.html.erb",
+			"settings":
+			{
+				"buffer_size": 1087,
 				"line_ending": "Unix"
 			}
 		}
@@ -161,12 +185,12 @@
 	"file_history":
 	[
 		"/home/ac/data/tripping-octo-bear/app/views/events/index.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/views/registrations/edit.html.erb",
+		"/home/ac/data/tripping-octo-bear/app/views/profile/_user_profile.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/controllers/organizations_controller.rb",
 		"/home/ac/data/tripping-octo-bear/app/views/layouts/application.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/organizations/show.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/events/show.html.erb",
-		"/home/ac/data/tripping-octo-bear/app/views/registrations/edit.html.erb",
-		"/home/ac/data/tripping-octo-bear/app/views/profile/_user_profile.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/volunteers/show.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/organizations/index.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/devise/sessions/new.html.erb",
@@ -213,6 +237,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"navbar",
+			"	",
 			"{",
 			"container",
 			"master",
@@ -220,7 +246,7 @@
 			"unless"
 		],
 		"highlight": true,
-		"in_selection": false,
+		"in_selection": true,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -235,7 +261,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -297,15 +323,15 @@
 					"file": "app/views/my_events/show.html.erb",
 					"settings":
 					{
-						"buffer_size": 1252,
+						"buffer_size": 1651,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1024,
-								1024
+								1651,
+								1651
 							]
 						],
 						"settings":
@@ -324,15 +350,15 @@
 					"file": "app/assets/stylesheets/application.css",
 					"settings":
 					{
-						"buffer_size": 4859,
+						"buffer_size": 5143,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4856,
-								4856
+								5103,
+								5103
 							]
 						],
 						"settings":
@@ -341,7 +367,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3902.0,
+						"translation.y": 4770.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -358,8 +384,8 @@
 						"selection":
 						[
 							[
-								2258,
-								1542
+								132,
+								132
 							]
 						],
 						"settings":
@@ -369,17 +395,17 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 306.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/views/profile/_user_profile.html.erb",
+					"file": "app/views/events/new.html.erb",
 					"settings":
 					{
-						"buffer_size": 1289,
+						"buffer_size": 503,
 						"regions":
 						{
 						},
@@ -387,13 +413,12 @@
 						[
 							[
 								0,
-								0
+								503
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -403,18 +428,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "app/views/registrations/edit.html.erb",
+					"file": "app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 2308,
+						"buffer_size": 2910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2893,
+								2893
 							]
 						],
 						"settings":
@@ -422,6 +447,87 @@
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1224.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/views/events/edit.html.erb",
+					"settings":
+					{
+						"buffer_size": 582,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/assets/stylesheets/stuff.css",
+					"settings":
+					{
+						"buffer_size": 84501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15421,
+								15421
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13592.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/views/profile/_user_profile.html.erb",
+					"settings":
+					{
+						"buffer_size": 1087,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								118,
+								118
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -474,12 +580,36 @@
 		"selected_items":
 		[
 			[
-				"edi",
-				"app/views/registrations/edit.html.erb"
+				"_u",
+				"app/views/profile/_user_profile.html.erb"
 			],
 			[
 				"sho",
-				"app/views/volunteers/show.html.erb"
+				"app/views/my_events/show.html.erb"
+			],
+			[
+				"css",
+				"app/assets/stylesheets/stuff.css"
+			],
+			[
+				"edi",
+				"app/views/events/edit.html.erb"
+			],
+			[
+				"appl",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"applica",
+				"app/assets/stylesheets/application.css"
+			],
+			[
+				"new",
+				"app/views/events/new.html.erb"
+			],
+			[
+				"in",
+				"app/views/events/index.html.erb"
 			],
 			[
 				"profi",
@@ -514,10 +644,6 @@
 				"app/views/organizations/index.html.erb"
 			],
 			[
-				"new",
-				"app/views/events/new.html.erb"
-			],
-			[
 				"appli",
 				"app/views/layouts/application.html.erb"
 			],
@@ -550,10 +676,6 @@
 				"app/models/event.rb"
 			],
 			[
-				"in",
-				"app/views/events/index.html.erb"
-			],
-			[
 				"user",
 				"app/models/user.rb"
 			],
@@ -568,14 +690,6 @@
 			[
 				"helb",
 				"app/helpers/registrations_helper.rb"
-			],
-			[
-				"css",
-				"app/assets/stylesheets/stuff.css"
-			],
-			[
-				"appl",
-				"app/views/layouts/application.html.erb"
 			],
 			[
 				"n",

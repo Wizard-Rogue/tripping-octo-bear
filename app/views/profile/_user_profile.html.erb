@@ -1,15 +1,8 @@
 <div>
 	<div id="profile_pic_container"> <!-- container for picture -->
 		
-		<% if @user.image.blank? && @user.photo.blank? %>
-			<%= image_tag 'user_128.png' %>
-		<% else %>
-			<% unless @user.photo.blank? %>
-				<%= image_tag @user.image %>
-			<% else %>
+
 				<%= image_tag @user.photo (:medium) %>
-			<% end %>
-		<% end %>
 	</div>
 	<div id="profile_info"> <!-- container for profile information-->
 		<h1><%= @user.name %></h1>

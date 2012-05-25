@@ -1,4 +1,15 @@
+<% content_for :breadcrumb do %>
+  <li><%= link_to "Home", home_index_path %> <span class="divider">/</span></li>  
+  <li class="active">My Events</li>
+<% end %>
 
+<div id="go_to_the_right">
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_event_path,
+            :class => 'btn btn-primary' if can? :create, Event, :label => "New Event" %>
+        </div>
+<div>
+</br>
 <!--CREATED EVENTS -->
 <strong>Events you created:</strong>
 <% current_user.events.all.each do |u| %>
@@ -29,3 +40,4 @@
 		</div>
 	<% end %>
 <% end %>
+</div>
