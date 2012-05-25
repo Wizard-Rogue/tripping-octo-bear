@@ -28,7 +28,3 @@
       columnWidth: 300
   });
 </script>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_event_path,
-            :class => 'btn btn-primary' if can? :create, Event %>
