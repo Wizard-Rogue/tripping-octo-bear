@@ -4,11 +4,24 @@
   <div class="row-fluid">
       <!-- carousel and other stuff -->
         <div id="myCarousel" class="carousel">
+
+  <div class="carousel-inner">
+    <div class="active item">
+      <div class="hero-unit">
+        <div class="span3">
+          <%= link_to image_tag(@event.photo, :alt => "No photo supplied", :size => "230x160"), event_path(@event) %>
+        </div>
+        <div class="span5">
+         <h1><%= link_to @event.name, event_path(@event) %></h1>
+         <blockquote><%= truncate(@event.description, length: 150) %></blockquote>
+          </div>
+      </div>
+    </div>
     <% @events.each do |event| %>
       <div class="item">
         <div class="hero-unit">
           <div class="span3">
-            <%= link_to image_tag(event.photo, :alt => "rss feed", :size => "230x160"), event_path(event) %>
+            <%= link_to image_tag(event.photo, :alt => "No photo supplied", :size => "230x160"), event_path(event) %>
           </div>
           <div class="span5">
 	         <h1><%= link_to event.name, event_path(event) %></h1>
