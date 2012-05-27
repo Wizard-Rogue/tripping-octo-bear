@@ -19,10 +19,14 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   require "omniauth-facebook"
   require "omniauth-twitter"
-	config.omniauth :facebook, ' 317743331634332', '48b6341abb2ad7146c4acededaf7f6d5'
-	config.omniauth :twitter, 'ASpd4kGCU65UXUjp4vMlA', 't4WCwoT0fYBcgChfBeIRu2VwQpNMqzUo4icN4uSfRc'
-  # config.omniauth :facebook, '376969209011426', '827c4c375cf8005bff034b83e350f4a5'
-  # config.omniauth :twitter, 'TPJKMB0GkKuk6Hd1TvSHyw', 'WaZ6kgCkf7RaABgdb4xrTcB5KgYgcZ5RgWpwdIBog'
+
+  #for heroku testing
+	#config.omniauth :facebook, ' 317743331634332', '48b6341abb2ad7146c4acededaf7f6d5'
+	#config.omniauth :twitter, 'ASpd4kGCU65UXUjp4vMlA', 't4WCwoT0fYBcgChfBeIRu2VwQpNMqzUo4icN4uSfRc'
+
+  #for local testing
+   config.omniauth :facebook, '376969209011426', '827c4c375cf8005bff034b83e350f4a5'
+   config.omniauth :twitter, 'TPJKMB0GkKuk6Hd1TvSHyw', 'WaZ6kgCkf7RaABgdb4xrTcB5KgYgcZ5RgWpwdIBog'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
