@@ -21,7 +21,8 @@ Devise.setup do |config|
   require "omniauth-twitter"
 
   #for heroku testing
-	config.omniauth :facebook, ' 317743331634332', '48b6341abb2ad7146c4acededaf7f6d5'
+
+	config.omniauth :facebook, '317743331634332', '48b6341abb2ad7146c4acededaf7f6d5'
 	config.omniauth :twitter, 'ASpd4kGCU65UXUjp4vMlA', 't4WCwoT0fYBcgChfBeIRu2VwQpNMqzUo4icN4uSfRc'
 
   #for local testing
