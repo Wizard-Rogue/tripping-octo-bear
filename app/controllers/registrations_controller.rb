@@ -22,22 +22,22 @@ class RegistrationsController < Devise::RegistrationsController
 		end
 	end
 
-	def update
-    self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-
-    if resource.update_with_password(params[resource_name]) || ![:facebook, :twitter].include? resource.source
-      if is_navigational_format?
-        if resource.respond_to?(:pending_reconfirmation?) && resource.pending_reconfirmation?
-          flash_key = :update_needs_confirmation
-        end
-        set_flash_message :notice, flash_key || :updated
-      end
-      sign_in resource_name, resource, :bypass => true
-      respond_with resource, :location => after_update_path_for(resource)
-    else
-      clean_up_passwords resource
-      respond_with resource
+	def edit
+      @user = current_user
     end
-  end
+
+    def update
+      @user = User.find(current_user.id)
+      unless @user.provider
+      	super
+      else
+	    if @user.update_without_password(params[:user])
+	      # Sign in the user bypassing validation in case his password changed
+	      redirect_to root_path
+	    else
+	      render "edit"
+	    end
+	  end
+    end
 
 end
