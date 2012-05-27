@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
   :address, :street, :city, :state, :country, :image, :phone, :website1, 
   :website2, :contact_number, :name, :screen_name, :latitude, :longitude, 
-  :description, :is_organization, :photo
+  :description, :is_organization, :photo, :provider
   
 
   # attr_accessible :title, :body
@@ -35,12 +35,12 @@ class User < ActiveRecord::Base
       user.update_attributes( :website2 => data.link ) unless user.website1 == data.link
       user
     else # create a user with a stub password
-      User.create!(:email => data.email, :password => Devise.friendly_token[0, 20], :name => data.name, :image => access_token["info"]["image"], :website1 => data.link, :is_organization => false, :country => "Philippines")
+      User.create!(:email => data.email, :password => Devise.friendly_token[0, 20], :name => data.name, :image => access_token["info"]["image"], :website1 => data.link, :is_organization => false, :country => "Philippines", :provider => true)
     end
   end
 
 	def self.create_with_twitter(access_token, signed_in_resource=nil)
-    self.create!( :screen_name => access_token.screen_name, :email => access_token.email, :password => Devise.friendly_token[0, 20], :name => access_token.name, :image => access_token.profile_image_url, :website1 => access_token.website, :is_organization => false, :country => "Philippines")
+    self.create!( :screen_name => access_token.screen_name, :email => access_token.email, :password => Devise.friendly_token[0, 20], :name => access_token.name, :image => access_token.profile_image_url, :website1 => access_token.website, :is_organization => false, :country => "Philippines", :provider => true)
   end
 
   def self.new_with_session(params, session)
@@ -56,6 +56,23 @@ class User < ActiveRecord::Base
   end
 
   def address
-    [street, city, state, country].compact.join(', ')
+    result = ""
+    result = "#{street}" unless street.blank? || street.nil?
+    if result.blank?
+      result = "#{city}" unless city.blank? || city.nil?  
+    else
+      result = "#{result}, #{city}" unless city.blank? || city.nil?
+    end
+    if result.blank?
+      result = "#{state}" unless state.blank? || state.nil?  
+    else
+      result = "#{result}, #{state}" unless state.blank? || state.nil?
+    end
+    if result.blank?
+      result = "#{country}" unless country.blank? || country.nil?  
+    else
+      result = "#{result}, #{country}" unless country.blank? || country.nil?
+    end
+    result
   end
 end
