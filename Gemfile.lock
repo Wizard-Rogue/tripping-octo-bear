@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
+  revision: fb21308cf752578df8e275a875a98c18fa02649e
+  specs:
+    twitter-bootstrap-rails (2.0.8.1)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.2)
+      railties (>= 3.1)
+      therubyracer (~> 0.10.1)
+
+GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: d6a3a712dbf13b81be58145f0f69d7c2d3b09be7
   specs:
@@ -90,7 +100,7 @@ GEM
     json (1.7.0)
     less (2.2.1)
       commonjs (~> 0.2.6)
-    less-rails (2.2.2)
+    less-rails (2.2.3)
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.3.10.4)
@@ -170,11 +180,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.0.7)
-      actionpack (>= 3.1)
-      less-rails (~> 2.2.2)
-      railties (>= 3.1)
-      therubyracer (~> 0.10.1)
     tzinfo (0.3.33)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
@@ -207,5 +212,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   therubyracer
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails!
   uglifier (>= 1.0.3)

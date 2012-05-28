@@ -7,7 +7,7 @@ gem 'rails', '3.2.3'
 
 gem 'pg'
 
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
 # Gems used only for assets and not required
