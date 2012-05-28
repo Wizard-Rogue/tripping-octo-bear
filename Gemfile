@@ -32,7 +32,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-identity'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'therubyracer'
 gem 'paperclip', :git =>"git://github.com/thoughtbot/paperclip.git"
 gem 'aws-s3'
 gem 'aws-sdk'
