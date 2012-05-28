@@ -3,7 +3,7 @@ class AddProviderToUsersTable < ActiveRecord::Migration
   	add_column :users, :provider, :boolean
   end
 
-  def end
+  def down
   	remove_column :users, :provider
   end
 end

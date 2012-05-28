@@ -3,13 +3,13 @@ class HomeController < ApplicationController
   	@apology = false
   	@nouser = false
   	if Event.first.nil?
-  		apology = true;
+  		@apology = true;
   	else
 	  	@events = Event.all
 	  	@event = Event.find(1)
 	end
 	if User.first.nil? || User.where(:is_organization => true).first.nil?
-		nouser = true;
+		@nouser = true;
 	else
 		@org = User.where(:is_organization => true).first
 	end

@@ -10,34 +10,45 @@
         </div>
 <div>
 </br>
-<!--CREATED EVENTS -->
-<strong>Events you created:</strong>
-<% current_user.events.all.each do |u| %>
-	<div id="event_list">
-		<div class="pic_container"><%= image_tag u.photo(:small) %></div>
-		<div class="event_info"><h3><%= link_to u.name, event_path(u) %></h3>
-			<p><%= truncate(u.description, length: 350) %></p></div>
-			<div class="btn_container">
-				<%= link_to t('.edit', :default => t("helpers.links.edit")), edit_event_path(u), :class => 'btn' if can? :update, u %>
-				<%= link_to t('.destroy', :default => t("helpers.links.destroy")), event_path(u), :method => 'delete',
-				:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-				:class => 'btn btn-danger' if can? :destroy, u %>
-			</div>
+<% unless current_user.events.all.first.nil? %>
+	<strong>Events you created:</strong>
+	<% current_user.events.all.each do |u| %>
+		<div id="event_list">
+			<div class="pic_container"><%= image_tag u.photo(:small) %></div>
+			<div class="event_info"><h3><%= link_to u.name, event_path(u) %></h3>
+				<p><%= truncate(u.description, length: 350) %></p></div>
+				<div class="btn_container">
+					<%= link_to t('.edit', :default => t("helpers.links.edit")), edit_event_path(u), :class => 'btn' if can? :update, u %>
+					<%= link_to t('.destroy', :default => t("helpers.links.destroy")), event_path(u), :method => 'delete',
+					:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+					:class => 'btn btn-danger' if can? :destroy, u %>
+				</div>
+		</div>
+	<% end %>
+<% else %>
+	<div class="row-fluid">
+		<h1>You currently have no events. Try making some and give hope to mankind. ;)</h1>
 	</div>
 <% end %>
 
 </br>
 </br>
-<strong>Events you support:</strong>
-<% Event.all.each do |u| %>
-		<% unless u.users.where(:id => current_user.id).first.nil? %>
-		<div id="event_list">
-			<div class="pic_container"><%= image_tag u.photo(:small) %></div>
-			<div class="event_info"><h3><%= link_to u.name, event_path(u) %></h3>
-				<p><%= truncate(u.description, length: 350) %></p>
-				<p>by <%= link_to u.organization.name, profile_url(u.organization.id) %></p>
+<% unless Event.first.nil? %>
+	<strong>Events you support:</strong>
+	<% Event.all.each do |u| %>
+			<% unless u.users.where(:id => current_user.id).first.nil? %>
+			<div id="event_list">
+				<div class="pic_container"><%= image_tag u.photo(:small) %></div>
+				<div class="event_info"><h3><%= link_to u.name, event_path(u) %></h3>
+					<p><%= truncate(u.description, length: 350) %></p>
+					<p>by <%= link_to u.organization.name, profile_url(u.organization.id) %></p>
+				</div>
 			</div>
-		</div>
+		<% end %>
 	<% end %>
+<% else %>
+	<div class="row-fluid">
+		<h1>Sorry, there are no events at the moment.</h1>
+	</div>
 <% end %>
 </div>

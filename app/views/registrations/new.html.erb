@@ -4,19 +4,12 @@
 		<%= devise_error_messages! %>
 			<div class="inputs">
     			<%= f.input :email, :required => true, :autofocus => true %>
-      <%= f.input :street, :input_html => {:class => "span5"} %>
-      <%= f.input :city , :input_html => {:class => "span3"}%>
-			    <%= f.input :state, :label => "Region", :collection => regions, :include_blank => false %>
-			    <%= f.input :website1, :label => "Website" %>
-			    <%= f.input :contact_number, :label => "Mobile Number" %>
-			    <%= f.input :is_organization, :as => :radio, :label => "Account Type", :collection => [["Volunteer", false], ["Organization", true]] %>
-			    <p class="margin"> <%= f.file_field :photo %></p>
 			  </div>
 		
 	<div class="actions">
 		<%= f.button :submit, "Create Account" %>
   	</div>
-<% end %>
+	<% end %>
 
 <% else %>
 
