@@ -1,5 +1,5 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, '376969209011426', '827c4c375cf8005bff034b83e350f4a5'
+  provider :facebook, '317743331634332', '48b6341abb2ad7146c4acededaf7f6d5'
 end
 
 require 'open-uri'
