@@ -80,82 +80,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/volunteers/show.html.erb",
+			"file": "app/controllers/home_controller.rb",
 			"settings":
 			{
-				"buffer_size": 210,
+				"buffer_size": 143,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/organizations/index.html.erb",
+			"file": "app/views/home/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 556,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/my_events/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 1651,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/application.css",
-			"settings":
-			{
-				"buffer_size": 5143,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/events/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 3586,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/events/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 503,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/layouts/application.html.erb",
-			"settings":
-			{
-				"buffer_size": 2910,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/events/edit.html.erb",
-			"settings":
-			{
-				"buffer_size": 582,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/stylesheets/stuff.css",
-			"settings":
-			{
-				"buffer_size": 84501,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/profile/_user_profile.html.erb",
-			"settings":
-			{
-				"buffer_size": 1087,
+				"buffer_size": 3036,
 				"line_ending": "Unix"
 			}
 		}
@@ -184,6 +120,16 @@
 	},
 	"file_history":
 	[
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/assets/stylesheets/stuff.css",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/events/edit.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/layouts/application.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/events/new.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/events/show.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/assets/stylesheets/application.css",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/my_events/show.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/organizations/index.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/volunteers/show.html.erb",
+		"/home/jabo/data/clone-tripping/high-samurai-1021/app/views/profile/_user_profile.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/events/index.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/registrations/edit.html.erb",
 		"/home/ac/data/tripping-octo-bear/app/views/profile/_user_profile.html.erb",
@@ -261,29 +207,28 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/volunteers/show.html.erb",
+					"file": "app/controllers/home_controller.rb",
 					"settings":
 					{
-						"buffer_size": 210,
+						"buffer_size": 143,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								209,
-								209
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -293,99 +238,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "app/views/organizations/index.html.erb",
+					"file": "app/views/home/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 556,
+						"buffer_size": 3036,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								186,
-								186
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/my_events/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 1651,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1651,
-								1651
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/stylesheets/application.css",
-					"settings":
-					{
-						"buffer_size": 5143,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5103,
-								5103
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4770.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/events/show.html.erb",
-					"settings":
-					{
-						"buffer_size": 3586,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								132,
-								132
+								3036,
+								3036
 							]
 						],
 						"settings":
@@ -395,142 +259,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/events/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 503,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								503
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/views/layouts/application.html.erb",
-					"settings":
-					{
-						"buffer_size": 2910,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2893,
-								2893
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1224.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/events/edit.html.erb",
-					"settings":
-					{
-						"buffer_size": 582,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								147,
-								147
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/assets/stylesheets/stuff.css",
-					"settings":
-					{
-						"buffer_size": 84501,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15421,
-								15421
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 13592.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/views/profile/_user_profile.html.erb",
-					"settings":
-					{
-						"buffer_size": 1087,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								118,
-								118
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 791.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -579,6 +308,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"homeind",
+				"app/views/home/index.html.erb"
+			],
+			[
+				"home_c",
+				"app/controllers/home_controller.rb"
+			],
 			[
 				"_u",
 				"app/views/profile/_user_profile.html.erb"
@@ -780,16 +517,20 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/home/jabo/data/tripping_octo_bear/tripping-octo-bear.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 261.0,
+	"side_bar_width": 90.0,
 	"status_bar_visible": true
 }

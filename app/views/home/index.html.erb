@@ -1,18 +1,31 @@
 
 <div id="title"></div>
+<% unless @apology %>
 <div class="container-fluid">
-  <div class="row-fluid">
-      <!-- carousel and other stuff -->
-        <div id="myCarousel" class="carousel">
+<div class="row-fluid">
+<!-- carousel and other stuff -->
+<div id="myCarousel" class="carousel">
+  <div class="carousel-inner">
+    <div class="active item">
+      <div class="hero-unit">
+        <div class="span3">
+          <%= link_to image_tag(@event.photo, :alt => "No Photo supplied", :size => "230x160"), event_path(@event) %>
+        </div>
+        <div class="span5">
+         <h1><%= link_to @event.name, event_path(@event) %></h1>
+         <blockquote><%= truncate(@event.description, length: 150) %></blockquote>
+          </div>
+      </div>
+    </div>
     <% @events.each do |event| %>
       <div class="item">
         <div class="hero-unit">
           <div class="span3">
-            <%= link_to image_tag(event.photo, :alt => "rss feed", :size => "230x160"), event_path(event) %>
+            <%= link_to image_tag(event.photo, :alt => "No Photo supplied", :size => "230x160"), event_path(event) %>
           </div>
           <div class="span5">
-	         <h1><%= link_to event.name, event_path(event) %></h1>
-	         <blockquote><%= truncate(event.description, length: 150) %></blockquote>
+           <h1><%= link_to event.name, event_path(event) %></h1>
+           <blockquote><%= truncate(event.description, length: 150) %></blockquote>
             </div>
         </div>
       </div>
@@ -21,9 +34,8 @@
    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
-  </div>
+</div>
 
- <% @events.each do |event| %>
  <div class="span4 bottom_container" style="display: block;">
     <div style="padding: 10px;">
       <h1>Featured Event</h1>
@@ -31,8 +43,22 @@
       <p><%= truncate(@event.description, length: 150) %></p>
     </div>
   </div>
-  <% end -%>
+<% else %>
+  <div class="hero-unit">
+    <div class="span5">
+      <h1>We're sorry, but the site doesn't seem to have events at the moment. Please check back at a later time.</h1>
+    </div>
+  </div>
 
+  <div class="span4 bottom_container" style="display: block;">
+    <div style="padding: 10px;">
+      <h1>Featured Event</h1>
+      <h2>No Events available</h2>
+      <p>We're sorry, but the site doesn't seem to have events at the moment. Please check back at a later time.</p>
+    </div>
+  </div>
+<% end %>
+<% unless @nouser %>
    <div class="span4 bottom_container" style="display: block;">
     <div style="padding: 10px;">
       <h1>Featured Organization</h1>
@@ -40,7 +66,15 @@
       <p><%= truncate(@org.description, length: 150) %></p>
     </div>
   </div>
-
+<% else %>
+  <div class="span4 bottom_container" style="display: block;">
+    <div style="padding: 10px;">
+      <h1>Featured Organization</h1>
+      <h2>No Organizations available</h2>
+      <p>We're sorry, but the site doesn't seem to have any registered organizations at the moment. Please check back at a later time.</p>
+    </div>
+  </div>
+<% end %>
   <div class="span4 bottom_container" style="display: block;">
     <div style="padding: 10px;">
       <h1>About Us</h1>
@@ -50,5 +84,3 @@
   </div>
 
 </div>
-
-
