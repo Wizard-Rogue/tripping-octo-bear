@@ -27,11 +27,11 @@
  <div class="span4 bottom_container" style="display: block;">
     <div style="padding: 10px;">
       <h1>Featured Event</h1>
-      <h2><%= link_to @event.name, event_path(@event) %></h2>
-      <p><%= truncate(@event.description, length: 150) %></p>
+      <h2><%= link_to event.name, event_path(event) %></h2>
+      <p><%= truncate(event.description, length: 150) %></p>
     </div>
   </div>
-  <% end -%>
+  <% end %>
 
    <div class="span4 bottom_container" style="display: block;">
     <div style="padding: 10px;">
