@@ -10,9 +10,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery_ujs
-//= require bootstrap-alert
-//= require bootstrap-carousel
-//= require bootstrap-dropdown
-//= require bootstrap-transition
+//= require twitter/bootstrap
 //= require jquery
 //= require_tree .
