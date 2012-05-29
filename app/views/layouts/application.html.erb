@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+
+<%= javascript_tag 'http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js'%>
 <head>
   <title>Kabayanihan</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -32,7 +34,7 @@
             <li><%= link_to "Events", events_path %></li>
             <li><%= link_to "Organizations", organizations_path %></li>
           </ul>
-          
+          <%= javascript_tag 'http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js' %>
           <ul class="nav pull-right">
             <% unless user_signed_in? %>
               <li><%= link_to "Sign In", new_user_session_url %></li>
@@ -49,6 +51,7 @@
               <li><%= link_to "My Events", my_events_url %></li> <!-- will show user's joined events. pweds din ung bookmarked & history/viewed peo wag muna...-->
               <% end %>
               <li class="divider-vertical"></li>
+              
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= current_user.name %> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
